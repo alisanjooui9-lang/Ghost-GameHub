@@ -3,800 +3,521 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-
-<title>Buy Game | Game Hub</title>
+<title>Game Hub - Checkout</title>
 
 <style>
-
-*{
-    box-sizing:border-box;
-}
+*{box-sizing:border-box}
 
 body{
     margin:0;
     background:#000;
     color:#fff;
-    font-family:tahoma,Arial,sans-serif;
+    font-family:Tahoma,Arial,sans-serif;
 }
-
-/* RGB */
 
 @keyframes rgb{
-    0%{
-        background-position:0% 50%;
-    }
-
-    50%{
-        background-position:100% 50%;
-    }
-
-    100%{
-        background-position:0% 50%;
-    }
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
 }
-
-/* HEADER */
 
 header{
     height:70px;
-
+    padding:0 20px;
     display:flex;
     align-items:center;
     justify-content:space-between;
-
-    padding:0 20px;
-
     background:#080808;
-
     border-bottom:1px solid #222;
 }
 
 .logo{
-    font-family:Arial,sans-serif;
-    font-size:20px;
+    font-family:Arial;
+    font-size:21px;
     font-weight:bold;
 }
 
 .logo span{
-    background:
-    linear-gradient(
-        90deg,
-        red,
-        #ff00ff,
-        blue,
-        cyan,
-        lime,
-        yellow,
-        red
+    background:linear-gradient(
+        90deg,red,#ff00ff,blue,cyan,lime,yellow,red
     );
-
     background-size:400%;
-
-    animation:
-    rgb 4s linear infinite;
-
+    animation:rgb 4s linear infinite;
     -webkit-background-clip:text;
     background-clip:text;
-
     color:transparent;
 }
 
 .back{
     color:#aaa;
     text-decoration:none;
-    font-size:11px;
+    font-size:10px;
 }
-
-.back:hover{
-    color:#fff;
-}
-
-/* MAIN */
 
 .container{
-    width:100%;
-    max-width:700px;
-
+    max-width:650px;
     margin:auto;
-
-    padding:35px 18px;
+    padding:35px 15px;
 }
 
-/* TITLE */
-
-.page-title{
+.title{
     text-align:center;
     margin-bottom:25px;
 }
 
-.page-title h1{
-    font-family:Arial,sans-serif;
-    font-size:28px;
+.title h1{
     margin:0;
+    font-family:Arial;
+    font-size:29px;
 }
 
-.page-title p{
+.title p{
     color:#666;
-    font-size:10px;
+    font-size:9px;
 }
-
-/* CARD */
 
 .card{
     position:relative;
-
     background:#090909;
-
-    border:1px solid #272727;
-
-    border-radius:20px;
-
+    border:1px solid #292929;
+    border-radius:18px;
     padding:25px;
-
     overflow:hidden;
-
-    box-shadow:
-    0 10px 40px
-    rgba(0,0,0,.5);
 }
 
-/* RGB LINE */
-
-.card::before{
-
+.card:before{
     content:"";
-
     position:absolute;
-
-    top:0;
     left:0;
-
+    top:0;
     width:100%;
     height:3px;
-
-    background:
-    linear-gradient(
-        90deg,
-        red,
-        #ff00ff,
-        blue,
-        cyan,
-        lime,
-        yellow,
-        red
+    background:linear-gradient(
+        90deg,red,#ff00ff,blue,cyan,lime,yellow,red
     );
-
     background-size:400%;
-
-    animation:
-    rgb 3s linear infinite;
+    animation:rgb 3s linear infinite;
 }
 
-/* GAME */
-
-.game-box{
-    text-align:center;
-
+.game{
+    display:flex;
+    gap:18px;
+    align-items:center;
     padding-bottom:20px;
-
     border-bottom:1px solid #222;
 }
 
+.game img{
+    width:100px;
+    height:135px;
+    object-fit:cover;
+    border-radius:10px;
+    border:1px solid #333;
+}
+
+.game-info h2{
+    font-family:Arial;
+    font-size:18px;
+    margin:0 0 10px;
+}
+
 .android{
-
     display:inline-block;
-
-    padding:
-    7px 12px;
-
-    background:#0c1b0c;
-
-    border:1px solid #315c31;
-
-    border-radius:8px;
-
     color:#7cff7c;
-
-    font-size:9px;
-
-    font-weight:bold;
-
-    letter-spacing:1px;
-}
-
-.game-name{
-
-    font-family:Arial,sans-serif;
-
-    font-size:23px;
-
-    font-weight:bold;
-
-    margin-top:13px;
-}
-
-.game-size{
-
-    color:#666;
-
-    font-size:9px;
-
-    margin-top:7px;
-}
-
-/* PRICE */
-
-.price-box{
-
-    text-align:center;
-
-    padding:22px 0;
-
-}
-
-.price-label{
-
-    color:#666;
-
-    font-size:9px;
-
+    background:#0b180b;
+    border:1px solid #315b31;
+    border-radius:7px;
+    padding:6px 9px;
+    font-size:8px;
 }
 
 .price{
-
-    margin-top:7px;
-
-    font-family:Arial,sans-serif;
-
-    font-size:32px;
-
-    font-weight:bold;
-
-    background:
-    linear-gradient(
-        90deg,
-        #fff,
-        #aaa,
-        #fff
-    );
-
-    -webkit-background-clip:text;
-    background-clip:text;
-
-    color:transparent;
-}
-
-/* PAYMENT */
-
-.payment{
-
-    background:#0d0d0d;
-
-    border:1px solid #242424;
-
-    border-radius:15px;
-
-    padding:18px;
-
-}
-
-.payment h2{
-
-    font-size:13px;
-
-    margin-top:0;
-}
-
-.payment p{
-
-    color:#888;
-
-    font-size:9px;
-
-    line-height:2;
-}
-
-.payment-method{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:10px;
-
-    background:#111;
-
-    border:1px solid #292929;
-
-    border-radius:10px;
-
-    padding:12px;
-
     margin-top:10px;
-}
-
-.payment-icon{
-
-    font-size:22px;
-}
-
-.payment-text{
-
-    font-size:10px;
-
+    font-size:18px;
     font-weight:bold;
 }
 
-/* BUTTON */
+.form{
+    padding-top:20px;
+}
 
-.pay-button{
+label{
+    display:block;
+    color:#aaa;
+    font-size:10px;
+    margin-bottom:7px;
+}
 
+input{
     width:100%;
-
-    border:0;
-
-    border-radius:12px;
-
-    padding:15px;
-
-    margin-top:18px;
-
-    background:
-    linear-gradient(
-        90deg,
-        red,
-        #ff00ff,
-        blue,
-        cyan,
-        lime,
-        yellow
-    );
-
-    background-size:300%;
-
-    animation:
-    rgb 4s linear infinite;
-
+    padding:14px;
+    margin-bottom:16px;
+    border-radius:10px;
+    border:1px solid #292929;
+    background:#111;
     color:#fff;
-
-    font-family:tahoma;
-
-    font-size:11px;
-
-    font-weight:bold;
-
-    cursor:pointer;
-}
-
-.pay-button:hover{
-
-    transform:
-    translateY(-2px);
-
-    box-shadow:
-    0 5px 25px
-    rgba(0,255,255,.2);
-}
-
-/* EMAIL */
-
-.email-box{
-
-    margin-top:18px;
-
-    padding:16px;
-
-    border-radius:13px;
-
-    background:#080808;
-
-    border:1px solid #222;
-
-}
-
-.email-title{
-
-    font-size:10px;
-
-    font-weight:bold;
-
-}
-
-.email{
-
+    outline:none;
     direction:ltr;
-
-    text-align:center;
-
-    margin-top:10px;
-
-    color:#00ffff;
-
-    font-family:Arial,sans-serif;
-
-    font-size:12px;
 }
 
-/* NOTICE */
+input:focus{
+    border-color:#00ffff;
+}
+
+.pay{
+    width:100%;
+    padding:15px;
+    border:0;
+    border-radius:11px;
+    cursor:pointer;
+    color:#fff;
+    font-weight:bold;
+    background:linear-gradient(
+        90deg,red,#ff00ff,blue,cyan,lime,yellow
+    );
+    background-size:300%;
+    animation:rgb 4s linear infinite;
+}
+
+.result{
+    display:none;
+    margin-top:20px;
+    padding:18px;
+    border-radius:12px;
+    background:#071207;
+    border:1px solid #285528;
+    color:#9cff9c;
+    font-size:10px;
+    line-height:2.2;
+}
+
+.order-code{
+    direction:ltr;
+    text-align:center;
+    font-family:Arial;
+    font-size:18px;
+    color:#00ffff;
+    margin:10px 0;
+}
 
 .notice{
-
-    margin-top:18px;
-
     color:#555;
-
     font-size:8px;
-
-    line-height:2;
-
     text-align:center;
-}
-
-/* SUCCESS */
-
-.success{
-
-    display:none;
-
-    margin-top:20px;
-
-    padding:18px;
-
-    border-radius:13px;
-
-    background:#071207;
-
-    border:1px solid #285528;
-
-    color:#8cff8c;
-
-    font-size:9px;
-
     line-height:2;
+    margin-top:20px;
 }
-
-/* MOBILE */
-
-@media(max-width:600px){
-
-    .container{
-        padding:25px 12px;
-    }
-
-    .card{
-        padding:18px;
-    }
-
-    .game-name{
-        font-size:19px;
-    }
-
-}
-
 </style>
 </head>
 
 <body>
 
-
 <header>
-
-<div class="logo">
-🎮 <span>GAME HUB</span>
-</div>
-
-<a
-href="index.html"
-class="back">
-
-← BACK TO STORE
-
-</a>
-
+    <div class="logo">🎮 <span>GAME HUB</span></div>
+    <a href="index.html" class="back">← STORE</a>
 </header>
 
+<div class="container">
 
-<main class="container">
-
-
-<div class="page-title">
-
-<h1>
-BUY GAME
-</h1>
-
-<p>
-ANDROID MOBILE EDITION
-</p>
-
+<div class="title">
+    <h1>CHECKOUT</h1>
+    <p>ANDROID GAME STORE</p>
 </div>
-
 
 <div class="card">
 
+<div class="game">
 
-<!-- GAME -->
+<img id="gameImage" src="" alt="Game">
 
-<div class="game-box">
+<div class="game-info">
+    <span class="android">ANDROID</span>
 
-<span class="android">
-ANDROID
-</span>
+    <h2 id="gameName">GAME</h2>
 
-<div
-id="gameName"
-class="game-name">
-
-GAME
-
-</div>
-
-<div
-id="gameSize"
-class="game-size">
-
-MOBILE EDITION
-
+    <div class="price" id="gamePrice">-</div>
 </div>
 
 </div>
 
+<div class="form">
 
-<!-- PRICE -->
+<label for="phone">
+شماره موبایل
+</label>
 
-<div class="price-box">
+<input
+    id="phone"
+    type="tel"
+    inputmode="numeric"
+    maxlength="15"
+    placeholder="09xxxxxxxxx"
+>
 
-<div class="price-label">
-PRICE
-</div>
+<label for="name">
+نام مشتری
+</label>
 
-<div
-id="gamePrice"
-class="price">
-
-10,000 تومان
-
-</div>
-
-</div>
-
-
-<!-- PAYMENT -->
-
-<div class="payment">
-
-<h2>
-💳 PAYMENT
-</h2>
-
-<p>
-روش پرداخت را انتخاب کنید و پس از پرداخت،
-اطلاعات سفارش را برای ما ارسال کنید.
-</p>
-
-
-<div class="payment-method">
-
-<div class="payment-icon">
-💳
-</div>
-
-<div class="payment-text">
-پرداخت آنلاین
-</div>
-
-</div>
-
-
-<div class="payment-method">
-
-<div class="payment-icon">
-🏦
-</div>
-
-<div class="payment-text">
-پرداخت کارت به کارت
-</div>
-
-</div>
-
+<input
+    id="name"
+    type="text"
+    maxlength="60"
+    placeholder="نام و نام خانوادگی"
+>
 
 <button
-class="pay-button"
-onclick="paymentMessage()">
+    class="pay"
+    onclick="createOrder()">
 
-💳 CONTINUE TO PAYMENT
+💳 ثبت سفارش
 
 </button>
 
 </div>
 
-
-<!-- EMAIL -->
-
-<div class="email-box">
-
-<div class="email-title">
-📧 ارسال اطلاعات سفارش
-</div>
-
-<div class="email">
-alisanjooui9@gmail.com
-</div>
-
-</div>
-
-
-<!-- SUCCESS -->
-
 <div
-id="success"
-class="success">
+id="result"
+class="result">
 
-✅ سفارش ثبت شد.
+✅ سفارش شما ثبت شد.
+
+<div class="order-code" id="orderCode"></div>
 
 نام بازی:
-
-<strong id="successGame">
--
-</strong>
+<strong id="resultGame"></strong>
 
 <br>
 
-لطفاً پس از پرداخت،
-نام بازی را به ایمیل بالا ارسال کنید.
+شماره ثبت‌شده:
+<strong id="resultPhone"></strong>
 
-در صورت ارائه نسخه مجاز بازی،
-لینک دریافت برای شما ارسال خواهد شد.
+<br>
+
+این کد را برای پیگیری سفارش خود نگه دارید.
 
 </div>
-
 
 <div class="notice">
 
-⚠️ پرداخت واقعی در این نسخه فعال نیست.
-برای پرداخت واقعی باید درگاه پرداخت معتبر
-به سایت متصل شود.
-
+این نسخه آزمایشی است و پرداخت واقعی در آن فعال نیست.
 <br>
-
-GAME HUB © 2026
-
-</div>
-
+برای پرداخت واقعی باید درگاه پرداخت معتبر و مجاز متصل شود.
 
 </div>
 
-</main>
-
+</div>
+</div>
 
 <script>
 
 /* =========================
-   GAME DATABASE
+   GAME DATA
 ========================= */
 
 const games = {
 
     gta5:{
-        name:
-        "GRAND THEFT AUTO V",
-
-        size:
-        "2000 MB",
-
-        price:
-        15000
+        name:"GRAND THEFT AUTO V",
+        size:"2000 MB",
+        price:15000,
+        image:"images/gta5.jpg"
     },
 
     rdr1:{
-        name:
-        "RED DEAD REDEMPTION",
-
-        size:
-        "7000 MB",
-
-        price:
-        10000
+        name:"RED DEAD REDEMPTION",
+        size:"7000 MB",
+        price:10000,
+        image:"images/rdr1.jpg"
     },
 
     sanandreas:{
-        name:
-        "GRAND THEFT AUTO: SAN ANDREAS",
-
-        size:
-        "2400 MB",
-
-        price:
-        10000
+        name:"GRAND THEFT AUTO: SAN ANDREAS",
+        size:"2400 MB",
+        price:10000,
+        image:"images/sanandreas.jpg"
     },
 
     vicecity:{
-        name:
-        "GRAND THEFT AUTO: VICE CITY",
-
-        size:
-        "1500 MB",
-
-        price:
-        10000
+        name:"GRAND THEFT AUTO: VICE CITY",
+        size:"1500 MB",
+        price:10000,
+        image:"images/vicecity.jpg"
     },
 
     gta3:{
-        name:
-        "GRAND THEFT AUTO III",
-
-        size:
-        "800 MB",
-
-        price:
-        10000
+        name:"GRAND THEFT AUTO III",
+        size:"800 MB",
+        price:10000,
+        image:"images/gta3.jpg"
     }
 
 };
 
 
 /* =========================
-   GET GAME
+   READ GAME
 ========================= */
 
 const params =
-new URLSearchParams(
-    window.location.search
-);
+new URLSearchParams(location.search);
 
-const id =
+const gameID =
 params.get("game") || "gta5";
 
 const game =
-games[id] || games.gta5;
+games[gameID] || games.gta5;
 
 
 /* =========================
    DISPLAY
 ========================= */
 
-document.getElementById(
-    "gameName"
-).textContent =
-game.name;
+document.getElementById("gameName")
+.textContent = game.name;
 
-
-document.getElementById(
-    "gameSize"
-).textContent =
-"📦 " + game.size;
-
-
-document.getElementById(
-    "gamePrice"
-).textContent =
+document.getElementById("gamePrice")
+.textContent =
 game.price.toLocaleString("fa-IR")
-+
-" تومان";
++ " تومان";
 
-
-document.getElementById(
-    "successGame"
-).textContent =
-game.name;
+document.getElementById("gameImage")
+.src = game.image;
 
 
 /* =========================
-   PAYMENT MESSAGE
+   ORDER CODE
 ========================= */
 
-function paymentMessage(){
+function generateOrderCode(){
 
-    const success =
-    document.getElementById(
-        "success"
+    const random =
+    Math.floor(
+        100000 +
+        Math.random()*900000
     );
 
-    success.style.display =
+    return "GH-" + random;
+
+}
+
+
+/* =========================
+   CREATE ORDER
+========================= */
+
+function createOrder(){
+
+    const phone =
+    document.getElementById("phone")
+    .value.trim();
+
+    const name =
+    document.getElementById("name")
+    .value.trim();
+
+
+    if(!phone){
+
+        alert("لطفاً شماره موبایل را وارد کنید.");
+
+        return;
+    }
+
+
+    if(!/^09\d{9}$/.test(phone)){
+
+        alert(
+            "شماره موبایل باید مانند 09123456789 باشد."
+        );
+
+        return;
+    }
+
+
+    if(!name){
+
+        alert("لطفاً نام خود را وارد کنید.");
+
+        return;
+    }
+
+
+    const orderCode =
+    generateOrderCode();
+
+
+    const order = {
+
+        code:orderCode,
+
+        game:game.name,
+
+        gameID:gameID,
+
+        phone:phone,
+
+        name:name,
+
+        price:game.price,
+
+        date:
+        new Date().toLocaleString("fa-IR"),
+
+        status:"در انتظار پرداخت"
+
+    };
+
+
+    /* GET OLD ORDERS */
+
+    let orders =
+    JSON.parse(
+        localStorage.getItem("gameHubOrders")
+    ) || [];
+
+
+    /* ADD NEW ORDER */
+
+    orders.push(order);
+
+
+    /* SAVE */
+
+    localStorage.setItem(
+        "gameHubOrders",
+        JSON.stringify(orders)
+    );
+
+
+    /* SHOW RESULT */
+
+    document.getElementById(
+        "orderCode"
+    ).textContent =
+    orderCode;
+
+
+    document.getElementById(
+        "resultGame"
+    ).textContent =
+    game.name;
+
+
+    document.getElementById(
+        "resultPhone"
+    ).textContent =
+    phone;
+
+
+    document.getElementById(
+        "result"
+    ).style.display =
     "block";
 
-    success.scrollIntoView({
+
+    document.getElementById(
+        "result"
+    ).scrollIntoView({
         behavior:"smooth"
     });
 
