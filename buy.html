@@ -2,11 +2,14 @@
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Game Hub - Checkout</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Game Hub | Checkout</title>
 
 <style>
-*{box-sizing:border-box}
+*{
+    box-sizing:border-box;
+}
 
 body{
     margin:0;
@@ -23,12 +26,12 @@ body{
 
 header{
     height:70px;
-    padding:0 20px;
+    background:#080808;
+    border-bottom:1px solid #222;
     display:flex;
     align-items:center;
     justify-content:space-between;
-    background:#080808;
-    border-bottom:1px solid #222;
+    padding:0 20px;
 }
 
 .logo{
@@ -39,7 +42,14 @@ header{
 
 .logo span{
     background:linear-gradient(
-        90deg,red,#ff00ff,blue,cyan,lime,yellow,red
+        90deg,
+        red,
+        #ff00ff,
+        blue,
+        cyan,
+        lime,
+        yellow,
+        red
     );
     background-size:400%;
     animation:rgb 4s linear infinite;
@@ -68,7 +78,7 @@ header{
 .title h1{
     margin:0;
     font-family:Arial;
-    font-size:29px;
+    font-size:30px;
 }
 
 .title p{
@@ -85,15 +95,22 @@ header{
     overflow:hidden;
 }
 
-.card:before{
+.card::before{
     content:"";
     position:absolute;
-    left:0;
     top:0;
+    right:0;
     width:100%;
     height:3px;
     background:linear-gradient(
-        90deg,red,#ff00ff,blue,cyan,lime,yellow,red
+        90deg,
+        red,
+        #ff00ff,
+        blue,
+        cyan,
+        lime,
+        yellow,
+        red
     );
     background-size:400%;
     animation:rgb 3s linear infinite;
@@ -108,8 +125,8 @@ header{
 }
 
 .game img{
-    width:100px;
-    height:135px;
+    width:105px;
+    height:140px;
     object-fit:cover;
     border-radius:10px;
     border:1px solid #333;
@@ -118,27 +135,28 @@ header{
 .game-info h2{
     font-family:Arial;
     font-size:18px;
-    margin:0 0 10px;
+    margin:10px 0;
 }
 
 .android{
     display:inline-block;
-    color:#7cff7c;
-    background:#0b180b;
-    border:1px solid #315b31;
+    padding:6px 10px;
     border-radius:7px;
-    padding:6px 9px;
+    border:1px solid #315b31;
+    background:#0b180b;
+    color:#7cff7c;
     font-size:8px;
-}
-
-.price{
-    margin-top:10px;
-    font-size:18px;
     font-weight:bold;
 }
 
+.price{
+    font-size:18px;
+    font-weight:bold;
+    color:#fff;
+}
+
 .form{
-    padding-top:20px;
+    padding-top:22px;
 }
 
 label{
@@ -152,19 +170,18 @@ input{
     width:100%;
     padding:14px;
     margin-bottom:16px;
-    border-radius:10px;
-    border:1px solid #292929;
     background:#111;
     color:#fff;
+    border:1px solid #292929;
+    border-radius:10px;
     outline:none;
-    direction:ltr;
 }
 
 input:focus{
     border-color:#00ffff;
 }
 
-.pay{
+.submit{
     width:100%;
     padding:15px;
     border:0;
@@ -173,31 +190,52 @@ input:focus{
     color:#fff;
     font-weight:bold;
     background:linear-gradient(
-        90deg,red,#ff00ff,blue,cyan,lime,yellow
+        90deg,
+        red,
+        #ff00ff,
+        blue,
+        cyan,
+        lime,
+        yellow
     );
     background-size:300%;
     animation:rgb 4s linear infinite;
 }
 
-.result{
+.submit:disabled{
+    opacity:.5;
+    cursor:not-allowed;
+}
+
+.message{
     display:none;
     margin-top:20px;
     padding:18px;
     border-radius:12px;
+    line-height:2;
+    font-size:10px;
+}
+
+.success{
     background:#071207;
     border:1px solid #285528;
     color:#9cff9c;
-    font-size:10px;
-    line-height:2.2;
+}
+
+.error{
+    background:#180707;
+    border:1px solid #5b2222;
+    color:#ff8585;
 }
 
 .order-code{
     direction:ltr;
     text-align:center;
-    font-family:Arial;
-    font-size:18px;
     color:#00ffff;
-    margin:10px 0;
+    font-family:Arial;
+    font-size:20px;
+    font-weight:bold;
+    margin:8px 0;
 }
 
 .notice{
@@ -207,146 +245,224 @@ input:focus{
     line-height:2;
     margin-top:20px;
 }
+
+@media(max-width:500px){
+
+    .game img{
+        width:85px;
+        height:115px;
+    }
+
+    .game-info h2{
+        font-size:14px;
+    }
+
+}
 </style>
 </head>
 
 <body>
 
 <header>
-    <div class="logo">🎮 <span>GAME HUB</span></div>
-    <a href="index.html" class="back">← STORE</a>
+
+<div class="logo">
+🎮 <span>GAME HUB</span>
+</div>
+
+<a href="index.html" class="back">
+← فروشگاه
+</a>
+
 </header>
+
 
 <div class="container">
 
 <div class="title">
-    <h1>CHECKOUT</h1>
-    <p>ANDROID GAME STORE</p>
+
+<h1>ثبت سفارش</h1>
+
+<p>GAME HUB • ANDROID STORE</p>
+
 </div>
+
 
 <div class="card">
 
+
 <div class="game">
 
-<img id="gameImage" src="" alt="Game">
+<img
+id="gameImage"
+src=""
+alt="Game">
 
 <div class="game-info">
-    <span class="android">ANDROID</span>
 
-    <h2 id="gameName">GAME</h2>
+<span class="android">
+ANDROID
+</span>
 
-    <div class="price" id="gamePrice">-</div>
+<h2 id="gameName">
+در حال بارگذاری...
+</h2>
+
+<div
+class="price"
+id="gamePrice">
+-
 </div>
 
 </div>
+
+</div>
+
 
 <div class="form">
+
+
+<label for="customerName">
+نام و نام خانوادگی
+</label>
+
+<input
+id="customerName"
+type="text"
+maxlength="60"
+placeholder="نام خود را وارد کنید">
+
 
 <label for="phone">
 شماره موبایل
 </label>
 
 <input
-    id="phone"
-    type="tel"
-    inputmode="numeric"
-    maxlength="15"
-    placeholder="09xxxxxxxxx"
->
+id="phone"
+type="tel"
+inputmode="numeric"
+maxlength="11"
+placeholder="09123456789">
 
-<label for="name">
-نام مشتری
-</label>
-
-<input
-    id="name"
-    type="text"
-    maxlength="60"
-    placeholder="نام و نام خانوادگی"
->
 
 <button
-    class="pay"
-    onclick="createOrder()">
+id="submitBtn"
+class="submit"
+onclick="submitOrder()">
 
-💳 ثبت سفارش
+🛒 ثبت سفارش
 
 </button>
 
-</div>
 
 <div
-id="result"
-class="result">
+id="successMessage"
+class="message success">
 
-✅ سفارش شما ثبت شد.
+✅ سفارش با موفقیت ثبت شد.
 
-<div class="order-code" id="orderCode"></div>
+<div
+id="orderCode"
+class="order-code">
+</div>
 
-نام بازی:
-<strong id="resultGame"></strong>
-
-<br>
-
-شماره ثبت‌شده:
-<strong id="resultPhone"></strong>
+بازی:
+<strong id="successGame"></strong>
 
 <br>
 
-این کد را برای پیگیری سفارش خود نگه دارید.
+شماره موبایل:
+<strong id="successPhone"></strong>
+
+<br>
+
+کد سفارش را برای پیگیری نگه دارید.
 
 </div>
+
+
+<div
+id="errorMessage"
+class="message error">
+
+<span id="errorText"></span>
+
+</div>
+
+
+</div>
+
 
 <div class="notice">
 
-این نسخه آزمایشی است و پرداخت واقعی در آن فعال نیست.
+پرداخت واقعی هنوز فعال نشده است.
 <br>
-برای پرداخت واقعی باید درگاه پرداخت معتبر و مجاز متصل شود.
+پس از اتصال درگاه مجاز، مرحله پرداخت را به همین سیستم اضافه می‌کنیم.
+
+</div>
+
 
 </div>
 
 </div>
-</div>
+
+
+<!-- Supabase -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
 
 <script>
 
-/* =========================
-   GAME DATA
-========================= */
+/* =================================
+   SUPABASE
+================================= */
+
+const SUPABASE_URL =
+"https://lldjrltmwllogpsvfwyq.supabase.co";
+
+const SUPABASE_KEY =
+"sb_publishable_OSZVrAQ9pntRAAvuonFcMg_5X3RT0-o";
+
+
+const supabaseClient =
+window.supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_KEY
+);
+
+
+/* =================================
+   GAME DATABASE
+================================= */
 
 const games = {
 
     gta5:{
         name:"GRAND THEFT AUTO V",
-        size:"2000 MB",
         price:15000,
         image:"images/gta5.jpg"
     },
 
     rdr1:{
         name:"RED DEAD REDEMPTION",
-        size:"7000 MB",
         price:10000,
         image:"images/rdr1.jpg"
     },
 
     sanandreas:{
         name:"GRAND THEFT AUTO: SAN ANDREAS",
-        size:"2400 MB",
         price:10000,
         image:"images/sanandreas.jpg"
     },
 
     vicecity:{
         name:"GRAND THEFT AUTO: VICE CITY",
-        size:"1500 MB",
         price:10000,
         image:"images/vicecity.jpg"
     },
 
     gta3:{
         name:"GRAND THEFT AUTO III",
-        size:"800 MB",
         price:10000,
         image:"images/gta3.jpg"
     }
@@ -354,172 +470,250 @@ const games = {
 };
 
 
-/* =========================
-   READ GAME
-========================= */
+/* =================================
+   READ GAME FROM URL
+================================= */
 
 const params =
-new URLSearchParams(location.search);
+new URLSearchParams(
+    window.location.search
+);
 
 const gameID =
 params.get("game") || "gta5";
+
 
 const game =
 games[gameID] || games.gta5;
 
 
-/* =========================
-   DISPLAY
-========================= */
+/* =================================
+   SHOW GAME
+================================= */
 
-document.getElementById("gameName")
-.textContent = game.name;
+document.getElementById(
+    "gameName"
+).textContent =
+game.name;
 
-document.getElementById("gamePrice")
-.textContent =
+
+document.getElementById(
+    "gamePrice"
+).textContent =
 game.price.toLocaleString("fa-IR")
-+ " تومان";
-
-document.getElementById("gameImage")
-.src = game.image;
++
+" تومان";
 
 
-/* =========================
+document.getElementById(
+    "gameImage"
+).src =
+game.image;
+
+
+/* =================================
    ORDER CODE
-========================= */
+================================= */
 
 function generateOrderCode(){
 
-    const random =
+    const number =
     Math.floor(
         100000 +
-        Math.random()*900000
+        Math.random() * 900000
     );
 
-    return "GH-" + random;
+    return "GH-" + number;
 
 }
 
 
-/* =========================
-   CREATE ORDER
-========================= */
+/* =================================
+   SHOW ERROR
+================================= */
 
-function createOrder(){
+function showError(message){
 
-    const phone =
-    document.getElementById("phone")
-    .value.trim();
+    const box =
+    document.getElementById(
+        "errorMessage"
+    );
+
+    document.getElementById(
+        "errorText"
+    ).textContent =
+    message;
+
+    box.style.display =
+    "block";
+
+}
+
+
+/* =================================
+   SUBMIT ORDER
+================================= */
+
+async function submitOrder(){
 
     const name =
-    document.getElementById("name")
-    .value.trim();
+    document.getElementById(
+        "customerName"
+    ).value.trim();
 
 
-    if(!phone){
-
-        alert("لطفاً شماره موبایل را وارد کنید.");
-
-        return;
-    }
+    const phone =
+    document.getElementById(
+        "phone"
+    ).value.trim();
 
 
-    if(!/^09\d{9}$/.test(phone)){
+    const button =
+    document.getElementById(
+        "submitBtn"
+    );
 
-        alert(
-            "شماره موبایل باید مانند 09123456789 باشد."
-        );
 
-        return;
-    }
+    document.getElementById(
+        "errorMessage"
+    ).style.display =
+    "none";
 
+
+    document.getElementById(
+        "successMessage"
+    ).style.display =
+    "none";
+
+
+    /* NAME */
 
     if(!name){
 
-        alert("لطفاً نام خود را وارد کنید.");
+        showError(
+            "لطفاً نام و نام خانوادگی را وارد کنید."
+        );
 
         return;
+
     }
+
+
+    /* PHONE */
+
+    if(!/^09\d{9}$/.test(phone)){
+
+        showError(
+            "شماره موبایل باید ۱۱ رقم باشد و با 09 شروع شود."
+        );
+
+        return;
+
+    }
+
+
+    button.disabled = true;
+
+    button.textContent =
+    "در حال ثبت سفارش...";
 
 
     const orderCode =
     generateOrderCode();
 
 
-    const order = {
+    try{
 
-        code:orderCode,
+        const { data, error } =
+        await supabaseClient
+        .from("orders")
+        .insert([{
 
-        game:game.name,
+            order_code:
+            orderCode,
 
-        gameID:gameID,
+            customer_name:
+            name,
 
-        phone:phone,
+            phone:
+            phone,
 
-        name:name,
+            game_id:
+            gameID,
 
-        price:game.price,
+            game_name:
+            game.name,
 
-        date:
-        new Date().toLocaleString("fa-IR"),
+            price:
+            game.price,
 
-        status:"در انتظار پرداخت"
+            status:
+            "در انتظار پرداخت"
 
-    };
-
-
-    /* GET OLD ORDERS */
-
-    let orders =
-    JSON.parse(
-        localStorage.getItem("gameHubOrders")
-    ) || [];
-
-
-    /* ADD NEW ORDER */
-
-    orders.push(order);
+        }])
+        .select();
 
 
-    /* SAVE */
+        if(error){
 
-    localStorage.setItem(
-        "gameHubOrders",
-        JSON.stringify(orders)
-    );
+            console.error(error);
 
+            throw error;
 
-    /* SHOW RESULT */
-
-    document.getElementById(
-        "orderCode"
-    ).textContent =
-    orderCode;
+        }
 
 
-    document.getElementById(
-        "resultGame"
-    ).textContent =
-    game.name;
+        /* SUCCESS */
+
+        document.getElementById(
+            "orderCode"
+        ).textContent =
+        orderCode;
 
 
-    document.getElementById(
-        "resultPhone"
-    ).textContent =
-    phone;
+        document.getElementById(
+            "successGame"
+        ).textContent =
+        game.name;
 
 
-    document.getElementById(
-        "result"
-    ).style.display =
-    "block";
+        document.getElementById(
+            "successPhone"
+        ).textContent =
+        phone;
 
 
-    document.getElementById(
-        "result"
-    ).scrollIntoView({
-        behavior:"smooth"
-    });
+        document.getElementById(
+            "successMessage"
+        ).style.display =
+        "block";
+
+
+        button.textContent =
+        "✅ سفارش ثبت شد";
+
+
+    }catch(error){
+
+        console.error(
+            "Supabase error:",
+            error
+        );
+
+
+        showError(
+            "ثبت سفارش انجام نشد. اتصال دیتابیس یا Policy جدول orders را بررسی کنید."
+        );
+
+
+        button.disabled =
+        false;
+
+
+        button.textContent =
+        "🛒 ثبت سفارش";
+
+    }
 
 }
 
