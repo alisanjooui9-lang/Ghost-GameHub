@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 
 <title>Game Details | Game Hub</title>
 
@@ -22,20 +22,34 @@ body{
 /* RGB */
 
 @keyframes rgb{
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
+
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
+
 }
 
 /* HEADER */
 
 header{
     height:70px;
+
     display:flex;
     align-items:center;
     justify-content:space-between;
+
     padding:0 20px;
+
     background:#080808;
+
     border-bottom:1px solid #222;
 }
 
@@ -45,7 +59,8 @@ header{
 }
 
 .logo span{
-    background:linear-gradient(
+    background:
+    linear-gradient(
         90deg,
         red,
         #ff00ff,
@@ -66,12 +81,14 @@ header{
     color:transparent;
 }
 
-/* BACK */
-
 .back{
     color:#aaa;
     text-decoration:none;
-    font-size:12px;
+    font-size:11px;
+}
+
+.back:hover{
+    color:#fff;
 }
 
 /* CONTAINER */
@@ -94,27 +111,39 @@ header{
 
 .cover-box{
     position:relative;
+
     border-radius:18px;
+
     overflow:hidden;
+
     border:1px solid #292929;
+
+    background:#111;
 }
 
 .cover{
     width:100%;
     height:480px;
+
     object-fit:cover;
+
     display:block;
 }
 
 .cover-box::after{
+
     content:"";
+
     position:absolute;
+
     right:0;
     top:0;
+
     width:4px;
     height:100%;
 
-    background:linear-gradient(
+    background:
+    linear-gradient(
         180deg,
         red,
         #ff00ff,
@@ -125,108 +154,182 @@ header{
         red
     );
 
-    background-size:100% 400%;
+    background-size:
+    100% 400%;
 
-    animation:rgbVertical 3s linear infinite;
+    animation:
+    rgbVertical 3s linear infinite;
 }
 
 @keyframes rgbVertical{
-    0%{background-position:0 0}
-    50%{background-position:0 100%}
-    100%{background-position:0 0}
+
+    0%{
+        background-position:0 0;
+    }
+
+    50%{
+        background-position:0 100%;
+    }
+
+    100%{
+        background-position:0 0;
+    }
+
 }
 
 /* INFO */
 
 .info h1{
+
     font-size:32px;
-    margin-top:5px;
+
+    margin-top:12px;
+
+    line-height:1.2;
+
 }
 
 .android{
+
     display:inline-block;
-    padding:7px 12px;
-    border:1px solid #315b31;
+
+    padding:
+    7px 12px;
+
+    border:
+    1px solid #315b31;
+
     background:#0d1b0d;
+
     color:#7cff7c;
+
     border-radius:8px;
-    font-size:11px;
+
+    font-size:10px;
+
     font-weight:bold;
+
+    letter-spacing:1px;
+
 }
 
 .description{
+
     color:#999;
+
     line-height:1.8;
-    font-size:13px;
+
+    font-size:12px;
+
 }
 
 /* DETAILS */
 
 .details{
+
     display:grid;
+
     grid-template-columns:
     repeat(2,1fr);
+
     gap:10px;
+
     margin-top:20px;
+
 }
 
 .detail{
+
     background:#0c0c0c;
+
     border:1px solid #222;
+
     border-radius:12px;
+
     padding:14px;
+
 }
 
 .detail small{
+
     color:#666;
+
     display:block;
-    font-size:9px;
+
+    font-size:8px;
+
     margin-bottom:6px;
+
 }
 
 .detail strong{
-    font-size:12px;
+
+    font-size:11px;
+
 }
 
 /* PRICE */
 
 .price{
+
     margin-top:25px;
+
     font-size:25px;
+
     font-weight:bold;
+
 }
 
 /* BUY */
 
 .buy{
+
     display:block;
+
     width:100%;
+
     margin-top:15px;
+
     padding:15px;
+
     border:0;
+
     border-radius:12px;
-    background:linear-gradient(
+
+    background:
+    linear-gradient(
         90deg,
-        #fff,
-        #ddd
+        red,
+        #ff00ff,
+        blue,
+        cyan,
+        lime,
+        yellow
     );
-    color:#000;
+
+    background-size:300%;
+
+    animation:rgb 4s linear infinite;
+
+    color:#fff;
+
+    font-size:12px;
+
     font-weight:bold;
+
     cursor:pointer;
-    font-size:13px;
+
 }
 
 .buy:hover{
-    transform:translateY(-2px);
-}
 
-/* FOOTER */
+    transform:
+    translateY(-2px);
 
-footer{
-    text-align:center;
-    color:#444;
-    padding:40px;
-    font-size:10px;
+    box-shadow:
+    0 5px 30px
+    rgba(0,255,255,.2);
+
 }
 
 /* MOBILE */
@@ -248,21 +351,31 @@ footer{
 }
 
 </style>
+
 </head>
 
+
 <body>
+
 
 <header>
 
 <div class="logo">
+
 🎮 <span>GAME HUB</span>
+
 </div>
 
-<a href="index.html" class="back">
+<a
+href="index.html"
+class="back">
+
 ← BACK
+
 </a>
 
 </header>
+
 
 
 <div class="container">
@@ -270,7 +383,7 @@ footer{
 <div class="game">
 
 
-<!-- COVER -->
+<!-- GAME COVER -->
 
 <div class="cover-box">
 
@@ -283,23 +396,35 @@ alt="Game Cover">
 </div>
 
 
-<!-- INFO -->
+
+<!-- GAME INFORMATION -->
 
 <div class="info">
 
+
 <span class="android">
+
 ANDROID
+
 </span>
 
-<h1 id="gameTitle">
+
+<h1
+id="gameTitle">
+
 GAME
+
 </h1>
 
+
 <p
-id="description"
+id="gameDescription"
 class="description">
-Mobile edition available for Android.
+
+Loading game information...
+
 </p>
+
 
 
 <div class="details">
@@ -325,7 +450,7 @@ VERSION
 </small>
 
 <strong>
-MOBILE
+MOBILE EDITION
 </strong>
 
 </div>
@@ -337,8 +462,11 @@ MOBILE
 SIZE
 </small>
 
-<strong id="gameSize">
+<strong
+id="gameSize">
+
 -
+
 </strong>
 
 </div>
@@ -347,10 +475,12 @@ SIZE
 <div class="detail">
 
 <small>
-TYPE
+GENRE
 </small>
 
-<strong>
+<strong
+id="gameGenre">
+
 ACTION
 </strong>
 
@@ -360,44 +490,43 @@ ACTION
 </div>
 
 
+
 <div
 id="gamePrice"
 class="price">
+
 -
+
 </div>
+
 
 
 <button
 class="buy"
-onclick="buyGame()">
+onclick="goToShop()">
 
 🛒 BUY NOW
 
 </button>
 
-</div>
 
 </div>
 
 </div>
 
+</div>
 
-<footer>
-
-GAME HUB © 2026
-
-</footer>
 
 
 <script>
 
-/*
+/* =========================
    GAME DATABASE
-*/
+========================= */
 
 const games = {
 
-    "gta5": {
+    gta5:{
 
         title:
         "GRAND THEFT AUTO V",
@@ -406,18 +535,21 @@ const games = {
         "2000 MB",
 
         price:
-        "$4.99",
+        15000,
+
+        genre:
+        "ACTION / OPEN WORLD",
 
         image:
-        "https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=800&q=80",
+        "images/gta5.jpg",
 
         description:
-        "Experience an action-packed open-world mobile game experience on Android."
+        "An action-packed open-world mobile gaming experience prepared for Android."
 
     },
 
 
-    "rdr1": {
+    rdr1:{
 
         title:
         "RED DEAD REDEMPTION",
@@ -426,18 +558,21 @@ const games = {
         "7000 MB",
 
         price:
-        "$5.99",
+        10000,
+
+        genre:
+        "ACTION / WESTERN",
 
         image:
-        "https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=800&q=80",
+        "images/rdr1.jpg",
 
         description:
-        "A western action adventure experience prepared for Android mobile."
+        "A western action-adventure experience prepared for Android mobile."
 
     },
 
 
-    "sanandreas": {
+    sanandreas:{
 
         title:
         "GRAND THEFT AUTO: SAN ANDREAS",
@@ -446,18 +581,21 @@ const games = {
         "2400 MB",
 
         price:
-        "$3.99",
+        10000,
+
+        genre:
+        "ACTION / OPEN WORLD",
 
         image:
-        "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=800&q=80",
+        "images/sanandreas.jpg",
 
         description:
-        "Explore a large open world and enjoy an action adventure experience on Android."
+        "Explore a large open-world action adventure experience on Android."
 
     },
 
 
-    "vicecity": {
+    vicecity:{
 
         title:
         "GRAND THEFT AUTO: VICE CITY",
@@ -466,18 +604,21 @@ const games = {
         "1500 MB",
 
         price:
-        "$2.99",
+        10000,
+
+        genre:
+        "ACTION / OPEN WORLD",
 
         image:
-        "https://images.unsplash.com/photo-1511882150382-421056c89033?auto=format&fit=crop&w=800&q=80",
+        "images/vicecity.jpg",
 
         description:
-        "Return to a classic city-based action adventure experience on Android."
+        "Experience a classic city-based action adventure on Android mobile."
 
     },
 
 
-    "gta3": {
+    gta3:{
 
         title:
         "GRAND THEFT AUTO III",
@@ -486,10 +627,13 @@ const games = {
         "800 MB",
 
         price:
-        "$2.49",
+        10000,
+
+        genre:
+        "ACTION / OPEN WORLD",
 
         image:
-        "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=800&q=80",
+        "images/gta3.jpg",
 
         description:
         "Classic open-world action gameplay prepared for Android mobile."
@@ -499,31 +643,41 @@ const games = {
 };
 
 
-/*
-   GET GAME
-*/
+/* =========================
+   READ URL
+========================= */
 
 const params =
 new URLSearchParams(
-    location.search
+    window.location.search
 );
 
 const gameID =
 params.get("game") || "gta5";
 
 
+/* =========================
+   FIND GAME
+========================= */
+
 const game =
 games[gameID] || games.gta5;
 
 
-/*
-   DISPLAY
-*/
+/* =========================
+   SHOW GAME
+========================= */
 
 document.getElementById(
     "gameTitle"
 ).textContent =
 game.title;
+
+
+document.getElementById(
+    "gameDescription"
+).textContent =
+game.description;
 
 
 document.getElementById(
@@ -533,15 +687,17 @@ game.size;
 
 
 document.getElementById(
-    "gamePrice"
+    "gameGenre"
 ).textContent =
-game.price;
+game.genre;
 
 
 document.getElementById(
-    "description"
+    "gamePrice"
 ).textContent =
-game.description;
+game.price.toLocaleString("fa-IR")
++
+" تومان";
 
 
 document.getElementById(
@@ -550,22 +706,19 @@ document.getElementById(
 game.image;
 
 
-/*
-   BUY
-*/
+/* =========================
+   SHOP
+========================= */
 
-function buyGame(){
+function goToShop(){
 
-    alert(
-        "BUY PAGE\n\n" +
-        game.title +
-        "\n" +
-        game.price
-    );
+    window.location.href =
+    "buy.html?game=" +
+    encodeURIComponent(gameID);
 
 }
 
 </script>
 
 </body>
-  </html>
+</html>
