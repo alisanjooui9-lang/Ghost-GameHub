@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>Buy Game | Game Hub</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    background:#000;
+    color:#fff;
+    font-family:tahoma,Arial,sans-serif;
+}
+
+/* RGB */
+
+@keyframes rgb{
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
+}
+
+/* HEADER */
+
+header{
+    height:70px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 20px;
+
+    background:#080808;
+
+    border-bottom:1px solid #222;
+}
+
+.logo{
+    font-family:Arial,sans-serif;
+    font-size:20px;
+    font-weight:bold;
+}
+
+.logo span{
+    background:
+    linear-gradient(
+        90deg,
+        red,
+        #ff00ff,
+        blue,
+        cyan,
+        lime,
+        yellow,
+        red
+    );
+
+    background-size:400%;
+
+    animation:
+    rgb 4s linear infinite;
+
+    -webkit-background-clip:text;
+    background-clip:text;
+
+    color:transparent;
+}
+
+.back{
+    color:#aaa;
+    text-decoration:none;
+    font-size:11px;
+}
+
+.back:hover{
+    color:#fff;
+}
+
+/* MAIN */
+
+.container{
+    width:100%;
+    max-width:700px;
+
+    margin:auto;
+
+    padding:35px 18px;
+}
+
+/* TITLE */
+
+.page-title{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+.page-title h1{
+    font-family:Arial,sans-serif;
+    font-size:28px;
+    margin:0;
+}
+
+.page-title p{
+    color:#666;
+    font-size:10px;
+}
+
+/* CARD */
+
+.card{
+    position:relative;
+
+    background:#090909;
+
+    border:1px solid #272727;
+
+    border-radius:20px;
+
+    padding:25px;
+
+    overflow:hidden;
+
+    box-shadow:
+    0 10px 40px
+    rgba(0,0,0,.5);
+}
+
+/* RGB LINE */
+
+.card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:3px;
+
+    background:
+    linear-gradient(
+        90deg,
+        red,
+        #ff00ff,
+        blue,
+        cyan,
+        lime,
+        yellow,
+        red
+    );
+
+    background-size:400%;
+
+    animation:
+    rgb 3s linear infinite;
+}
+
+/* GAME */
+
+.game-box{
+    text-align:center;
+
+    padding-bottom:20px;
+
+    border-bottom:1px solid #222;
+}
+
+.android{
+
+    display:inline-block;
+
+    padding:
+    7px 12px;
+
+    background:#0c1b0c;
+
+    border:1px solid #315c31;
+
+    border-radius:8px;
+
+    color:#7cff7c;
+
+    font-size:9px;
+
+    font-weight:bold;
+
+    letter-spacing:1px;
+}
+
+.game-name{
+
+    font-family:Arial,sans-serif;
+
+    font-size:23px;
+
+    font-weight:bold;
+
+    margin-top:13px;
+}
+
+.game-size{
+
+    color:#666;
+
+    font-size:9px;
+
+    margin-top:7px;
+}
+
+/* PRICE */
+
+.price-box{
+
+    text-align:center;
+
+    padding:22px 0;
+
+}
+
+.price-label{
+
+    color:#666;
+
+    font-size:9px;
+
+}
+
+.price{
+
+    margin-top:7px;
+
+    font-family:Arial,sans-serif;
+
+    font-size:32px;
+
+    font-weight:bold;
+
+    background:
+    linear-gradient(
+        90deg,
+        #fff,
+        #aaa,
+        #fff
+    );
+
+    -webkit-background-clip:text;
+    background-clip:text;
+
+    color:transparent;
+}
+
+/* PAYMENT */
+
+.payment{
+
+    background:#0d0d0d;
+
+    border:1px solid #242424;
+
+    border-radius:15px;
+
+    padding:18px;
+
+}
+
+.payment h2{
+
+    font-size:13px;
+
+    margin-top:0;
+}
+
+.payment p{
+
+    color:#888;
+
+    font-size:9px;
+
+    line-height:2;
+}
+
+.payment-method{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    background:#111;
+
+    border:1px solid #292929;
+
+    border-radius:10px;
+
+    padding:12px;
+
+    margin-top:10px;
+}
+
+.payment-icon{
+
+    font-size:22px;
+}
+
+.payment-text{
+
+    font-size:10px;
+
+    font-weight:bold;
+}
+
+/* BUTTON */
+
+.pay-button{
+
+    width:100%;
+
+    border:0;
+
+    border-radius:12px;
+
+    padding:15px;
+
+    margin-top:18px;
+
+    background:
+    linear-gradient(
+        90deg,
+        red,
+        #ff00ff,
+        blue,
+        cyan,
+        lime,
+        yellow
+    );
+
+    background-size:300%;
+
+    animation:
+    rgb 4s linear infinite;
+
+    color:#fff;
+
+    font-family:tahoma;
+
+    font-size:11px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+}
+
+.pay-button:hover{
+
+    transform:
+    translateY(-2px);
+
+    box-shadow:
+    0 5px 25px
+    rgba(0,255,255,.2);
+}
+
+/* EMAIL */
+
+.email-box{
+
+    margin-top:18px;
+
+    padding:16px;
+
+    border-radius:13px;
+
+    background:#080808;
+
+    border:1px solid #222;
+
+}
+
+.email-title{
+
+    font-size:10px;
+
+    font-weight:bold;
+
+}
+
+.email{
+
+    direction:ltr;
+
+    text-align:center;
+
+    margin-top:10px;
+
+    color:#00ffff;
+
+    font-family:Arial,sans-serif;
+
+    font-size:12px;
+}
+
+/* NOTICE */
+
+.notice{
+
+    margin-top:18px;
+
+    color:#555;
+
+    font-size:8px;
+
+    line-height:2;
+
+    text-align:center;
+}
+
+/* SUCCESS */
+
+.success{
+
+    display:none;
+
+    margin-top:20px;
+
+    padding:18px;
+
+    border-radius:13px;
+
+    background:#071207;
+
+    border:1px solid #285528;
+
+    color:#8cff8c;
+
+    font-size:9px;
+
+    line-height:2;
+}
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+    .container{
+        padding:25px 12px;
+    }
+
+    .card{
+        padding:18px;
+    }
+
+    .game-name{
+        font-size:19px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+
+<header>
+
+<div class="logo">
+🎮 <span>GAME HUB</span>
+</div>
+
+<a
+href="index.html"
+class="back">
+
+← BACK TO STORE
+
+</a>
+
+</header>
+
+
+<main class="container">
+
+
+<div class="page-title">
+
+<h1>
+BUY GAME
+</h1>
+
+<p>
+ANDROID MOBILE EDITION
+</p>
+
+</div>
+
+
+<div class="card">
+
+
+<!-- GAME -->
+
+<div class="game-box">
+
+<span class="android">
+ANDROID
+</span>
+
+<div
+id="gameName"
+class="game-name">
+
+GAME
+
+</div>
+
+<div
+id="gameSize"
+class="game-size">
+
+MOBILE EDITION
+
+</div>
+
+</div>
+
+
+<!-- PRICE -->
+
+<div class="price-box">
+
+<div class="price-label">
+PRICE
+</div>
+
+<div
+id="gamePrice"
+class="price">
+
+10,000 تومان
+
+</div>
+
+</div>
+
+
+<!-- PAYMENT -->
+
+<div class="payment">
+
+<h2>
+💳 PAYMENT
+</h2>
+
+<p>
+روش پرداخت را انتخاب کنید و پس از پرداخت،
+اطلاعات سفارش را برای ما ارسال کنید.
+</p>
+
+
+<div class="payment-method">
+
+<div class="payment-icon">
+💳
+</div>
+
+<div class="payment-text">
+پرداخت آنلاین
+</div>
+
+</div>
+
+
+<div class="payment-method">
+
+<div class="payment-icon">
+🏦
+</div>
+
+<div class="payment-text">
+پرداخت کارت به کارت
+</div>
+
+</div>
+
+
+<button
+class="pay-button"
+onclick="paymentMessage()">
+
+💳 CONTINUE TO PAYMENT
+
+</button>
+
+</div>
+
+
+<!-- EMAIL -->
+
+<div class="email-box">
+
+<div class="email-title">
+📧 ارسال اطلاعات سفارش
+</div>
+
+<div class="email">
+alisanjooui9@gmail.com
+</div>
+
+</div>
+
+
+<!-- SUCCESS -->
+
+<div
+id="success"
+class="success">
+
+✅ سفارش ثبت شد.
+
+نام بازی:
+
+<strong id="successGame">
+-
+</strong>
+
+<br>
+
+لطفاً پس از پرداخت،
+نام بازی را به ایمیل بالا ارسال کنید.
+
+در صورت ارائه نسخه مجاز بازی،
+لینک دریافت برای شما ارسال خواهد شد.
+
+</div>
+
+
+<div class="notice">
+
+⚠️ پرداخت واقعی در این نسخه فعال نیست.
+برای پرداخت واقعی باید درگاه پرداخت معتبر
+به سایت متصل شود.
+
+<br>
+
+GAME HUB © 2026
+
+</div>
+
+
+</div>
+
+</main>
+
+
+<script>
+
+/* =========================
+   GAME DATABASE
+========================= */
+
+const games = {
+
+    gta5:{
+        name:
+        "GRAND THEFT AUTO V",
+
+        size:
+        "2000 MB",
+
+        price:
+        15000
+    },
+
+    rdr1:{
+        name:
+        "RED DEAD REDEMPTION",
+
+        size:
+        "7000 MB",
+
+        price:
+        10000
+    },
+
+    sanandreas:{
+        name:
+        "GRAND THEFT AUTO: SAN ANDREAS",
+
+        size:
+        "2400 MB",
+
+        price:
+        10000
+    },
+
+    vicecity:{
+        name:
+        "GRAND THEFT AUTO: VICE CITY",
+
+        size:
+        "1500 MB",
+
+        price:
+        10000
+    },
+
+    gta3:{
+        name:
+        "GRAND THEFT AUTO III",
+
+        size:
+        "800 MB",
+
+        price:
+        10000
+    }
+
+};
+
+
+/* =========================
+   GET GAME
+========================= */
+
+const params =
+new URLSearchParams(
+    window.location.search
+);
+
+const id =
+params.get("game") || "gta5";
+
+const game =
+games[id] || games.gta5;
+
+
+/* =========================
+   DISPLAY
+========================= */
+
+document.getElementById(
+    "gameName"
+).textContent =
+game.name;
+
+
+document.getElementById(
+    "gameSize"
+).textContent =
+"📦 " + game.size;
+
+
+document.getElementById(
+    "gamePrice"
+).textContent =
+game.price.toLocaleString("fa-IR")
++
+" تومان";
+
+
+document.getElementById(
+    "successGame"
+).textContent =
+game.name;
+
+
+/* =========================
+   PAYMENT MESSAGE
+========================= */
+
+function paymentMessage(){
+
+    const success =
+    document.getElementById(
+        "success"
+    );
+
+    success.style.display =
+    "block";
+
+    success.scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+</script>
+
+</body>
+</html>
