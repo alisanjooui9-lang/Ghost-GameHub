@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width,initial-scale=1.0">
+
+<title>Game Hub - Orders</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+
+    margin:0;
+
+    background:#000;
+
+    color:#fff;
+
+    font-family:
+    Tahoma,
+    Arial,
+    sans-serif;
+
+}
+
+@keyframes rgb{
+
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
+
+}
+
+
+/* HEADER */
+
+header{
+
+    height:70px;
+
+    padding:
+    0 20px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    background:#080808;
+
+    border-bottom:
+    1px solid #222;
+
+}
+
+.logo{
+
+    font-family:Arial;
+
+    font-size:21px;
+
+    font-weight:bold;
+
+}
+
+.logo span{
+
+    background:
+    linear-gradient(
+        90deg,
+        red,
+        #ff00ff,
+        blue,
+        cyan,
+        lime,
+        yellow,
+        red
+    );
+
+    background-size:400%;
+
+    animation:
+    rgb 4s linear infinite;
+
+    -webkit-background-clip:text;
+
+    background-clip:text;
+
+    color:transparent;
+
+}
+
+.store{
+
+    color:#aaa;
+
+    text-decoration:none;
+
+    font-size:10px;
+
+}
+
+
+/* CONTAINER */
+
+.container{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    padding:
+    35px 15px;
+
+}
+
+
+/* TITLE */
+
+.title{
+
+    margin-bottom:25px;
+
+}
+
+.title h1{
+
+    margin:0;
+
+    font-family:Arial;
+
+    font-size:28px;
+
+}
+
+.title p{
+
+    color:#666;
+
+    font-size:9px;
+
+}
+
+
+/* STATS */
+
+.stats{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:12px;
+
+    margin-bottom:25px;
+
+}
+
+.stat{
+
+    background:#0b0b0b;
+
+    border:
+    1px solid #242424;
+
+    border-radius:13px;
+
+    padding:18px;
+
+}
+
+.stat small{
+
+    display:block;
+
+    color:#666;
+
+    font-size:8px;
+
+    margin-bottom:8px;
+
+}
+
+.stat strong{
+
+    font-size:20px;
+
+}
+
+
+/* TABLE */
+
+.table-box{
+
+    background:#090909;
+
+    border:
+    1px solid #242424;
+
+    border-radius:16px;
+
+    overflow:auto;
+
+}
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    min-width:850px;
+
+}
+
+th{
+
+    background:#111;
+
+    color:#777;
+
+    font-size:9px;
+
+    padding:15px;
+
+    text-align:right;
+
+}
+
+td{
+
+    border-top:
+    1px solid #1c1c1c;
+
+    padding:14px;
+
+    font-size:10px;
+
+}
+
+.code{
+
+    direction:ltr;
+
+    color:#00ffff;
+
+    font-family:Arial;
+
+}
+
+.phone{
+
+    direction:ltr;
+
+    color:#aaa;
+
+}
+
+.price{
+
+    color:#7cff7c;
+
+}
+
+
+/* STATUS */
+
+.status{
+
+    display:inline-block;
+
+    padding:
+    6px 9px;
+
+    border-radius:7px;
+
+    background:#171207;
+
+    border:1px solid #5c491b;
+
+    color:#ffd76a;
+
+    font-size:8px;
+
+}
+
+
+/* DELETE */
+
+.delete{
+
+    border:1px solid #5b2222;
+
+    background:#190909;
+
+    color:#ff7777;
+
+    border-radius:7px;
+
+    padding:7px 10px;
+
+    cursor:pointer;
+
+    font-size:8px;
+
+}
+
+.delete:hover{
+
+    background:#300b0b;
+
+}
+
+
+/* EMPTY */
+
+.empty{
+
+    display:none;
+
+    text-align:center;
+
+    padding:60px 20px;
+
+    color:#555;
+
+    font-size:11px;
+
+}
+
+
+/* FOOTER */
+
+footer{
+
+    text-align:center;
+
+    color:#444;
+
+    padding:40px;
+
+    font-size:8px;
+
+}
+
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+    .stats{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<div class="logo">
+
+🎮 <span>GAME HUB</span>
+
+</div>
+
+
+<a
+href="index.html"
+class="store">
+
+← STORE
+
+</a>
+
+</header>
+
+
+
+<div class="container">
+
+
+<div class="title">
+
+<h1>
+ORDERS PANEL
+</h1>
+
+<p>
+GAME HUB CUSTOMER ORDERS
+</p>
+
+</div>
+
+
+
+<!-- STATS -->
+
+<div class="stats">
+
+
+<div class="stat">
+
+<small>
+TOTAL ORDERS
+</small>
+
+<strong
+id="total">
+
+0
+
+</strong>
+
+</div>
+
+
+<div class="stat">
+
+<small>
+TOTAL VALUE
+</small>
+
+<strong
+id="totalValue">
+
+0
+
+</strong>
+
+</div>
+
+
+<div class="stat">
+
+<small>
+LAST ORDER
+</small>
+
+<strong
+id="lastOrder">
+
+-
+
+</strong>
+
+</div>
+
+
+</div>
+
+
+
+<!-- TABLE -->
+
+<div class="table-box">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>
+CODE
+</th>
+
+<th>
+NAME
+</th>
+
+<th>
+GAME
+</th>
+
+<th>
+PHONE
+</th>
+
+<th>
+PRICE
+</th>
+
+<th>
+DATE
+</th>
+
+<th>
+STATUS
+</th>
+
+<th>
+ACTION
+</th>
+
+</tr>
+
+</thead>
+
+
+<tbody
+id="orders">
+
+</tbody>
+
+</table>
+
+
+<div
+id="empty"
+class="empty">
+
+📭 هنوز سفارشی ثبت نشده است.
+
+</div>
+
+</div>
+
+
+</div>
+
+
+
+<footer>
+
+GAME HUB © 2026
+
+</footer>
+
+
+
+<script>
+
+/* =========================
+   LOAD ORDERS
+========================= */
+
+function loadOrders(){
+
+    const orders =
+    JSON.parse(
+        localStorage.getItem(
+            "gameHubOrders"
+        )
+    ) || [];
+
+
+    const tbody =
+    document.getElementById(
+        "orders"
+    );
+
+
+    tbody.innerHTML = "";
+
+
+    /* STATS */
+
+    document.getElementById(
+        "total"
+    ).textContent =
+    orders.length;
+
+
+    const totalValue =
+    orders.reduce(
+        (sum,order) =>
+        sum + Number(order.price),
+        0
+    );
+
+
+    document.getElementById(
+        "totalValue"
+    ).textContent =
+
+    totalValue.toLocaleString("fa-IR")
+    +
+    " تومان";
+
+
+    if(orders.length){
+
+        document.getElementById(
+            "lastOrder"
+        ).textContent =
+        orders[orders.length-1].code;
+
+    }else{
+
+        document.getElementById(
+            "lastOrder"
+        ).textContent =
+        "-";
+
+    }
+
+
+    /* EMPTY */
+
+    document.getElementById(
+        "empty"
+    ).style.display =
+    orders.length ?
+    "none" :
+    "block";
+
+
+    /* ROWS */
+
+    orders.forEach(
+        (order,index)=>{
+
+            const row =
+            document.createElement(
+                "tr"
+            );
+
+
+            row.innerHTML = `
+
+<td class="code">
+${escapeHTML(order.code)}
+</td>
+
+<td>
+${escapeHTML(order.name)}
+</td>
+
+<td>
+${escapeHTML(order.game)}
+</td>
+
+<td class="phone">
+${escapeHTML(order.phone)}
+</td>
+
+<td class="price">
+${Number(order.price).toLocaleString("fa-IR")}
+ تومان
+</td>
+
+<td>
+${escapeHTML(order.date)}
+</td>
+
+<td>
+<span class="status">
+${escapeHTML(order.status)}
+</span>
+</td>
+
+<td>
+
+<button
+class="delete"
+onclick="deleteOrder(${index})">
+
+حذف
+
+</button>
+
+</td>
+
+`;
+
+
+            tbody.appendChild(row);
+
+        }
+    );
+
+}
+
+
+/* =========================
+   DELETE
+========================= */
+
+function deleteOrder(index){
+
+    if(
+        !confirm(
+            "این سفارش حذف شود؟"
+        )
+    ){
+
+        return;
+
+    }
+
+
+    let orders =
+    JSON.parse(
+        localStorage.getItem(
+            "gameHubOrders"
+        )
+    ) || [];
+
+
+    orders.splice(index,1);
+
+
+    localStorage.setItem(
+        "gameHubOrders",
+        JSON.stringify(orders)
+    );
+
+
+    loadOrders();
+
+}
+
+
+/* =========================
+   SECURITY
+========================= */
+
+function escapeHTML(value){
+
+    const div =
+    document.createElement("div");
+
+    div.textContent =
+    value ?? "";
+
+    return div.innerHTML;
+
+}
+
+
+/* =========================
+   START
+========================= */
+
+loadOrders();
+
+</script>
+
+</body>
+</html>
