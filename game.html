@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Game Details | Game Hub</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    background:#000;
+    color:#fff;
+    font-family:Arial,sans-serif;
+}
+
+/* RGB */
+
+@keyframes rgb{
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+/* HEADER */
+
+header{
+    height:70px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 20px;
+    background:#080808;
+    border-bottom:1px solid #222;
+}
+
+.logo{
+    font-size:20px;
+    font-weight:bold;
+}
+
+.logo span{
+    background:linear-gradient(
+        90deg,
+        red,
+        #ff00ff,
+        blue,
+        cyan,
+        lime,
+        yellow,
+        red
+    );
+
+    background-size:400%;
+
+    animation:rgb 4s linear infinite;
+
+    -webkit-background-clip:text;
+    background-clip:text;
+
+    color:transparent;
+}
+
+/* BACK */
+
+.back{
+    color:#aaa;
+    text-decoration:none;
+    font-size:12px;
+}
+
+/* CONTAINER */
+
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:30px 20px;
+}
+
+/* GAME */
+
+.game{
+    display:grid;
+    grid-template-columns:350px 1fr;
+    gap:35px;
+}
+
+/* COVER */
+
+.cover-box{
+    position:relative;
+    border-radius:18px;
+    overflow:hidden;
+    border:1px solid #292929;
+}
+
+.cover{
+    width:100%;
+    height:480px;
+    object-fit:cover;
+    display:block;
+}
+
+.cover-box::after{
+    content:"";
+    position:absolute;
+    right:0;
+    top:0;
+    width:4px;
+    height:100%;
+
+    background:linear-gradient(
+        180deg,
+        red,
+        #ff00ff,
+        blue,
+        cyan,
+        lime,
+        yellow,
+        red
+    );
+
+    background-size:100% 400%;
+
+    animation:rgbVertical 3s linear infinite;
+}
+
+@keyframes rgbVertical{
+    0%{background-position:0 0}
+    50%{background-position:0 100%}
+    100%{background-position:0 0}
+}
+
+/* INFO */
+
+.info h1{
+    font-size:32px;
+    margin-top:5px;
+}
+
+.android{
+    display:inline-block;
+    padding:7px 12px;
+    border:1px solid #315b31;
+    background:#0d1b0d;
+    color:#7cff7c;
+    border-radius:8px;
+    font-size:11px;
+    font-weight:bold;
+}
+
+.description{
+    color:#999;
+    line-height:1.8;
+    font-size:13px;
+}
+
+/* DETAILS */
+
+.details{
+    display:grid;
+    grid-template-columns:
+    repeat(2,1fr);
+    gap:10px;
+    margin-top:20px;
+}
+
+.detail{
+    background:#0c0c0c;
+    border:1px solid #222;
+    border-radius:12px;
+    padding:14px;
+}
+
+.detail small{
+    color:#666;
+    display:block;
+    font-size:9px;
+    margin-bottom:6px;
+}
+
+.detail strong{
+    font-size:12px;
+}
+
+/* PRICE */
+
+.price{
+    margin-top:25px;
+    font-size:25px;
+    font-weight:bold;
+}
+
+/* BUY */
+
+.buy{
+    display:block;
+    width:100%;
+    margin-top:15px;
+    padding:15px;
+    border:0;
+    border-radius:12px;
+    background:linear-gradient(
+        90deg,
+        #fff,
+        #ddd
+    );
+    color:#000;
+    font-weight:bold;
+    cursor:pointer;
+    font-size:13px;
+}
+
+.buy:hover{
+    transform:translateY(-2px);
+}
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+    color:#444;
+    padding:40px;
+    font-size:10px;
+}
+
+/* MOBILE */
+
+@media(max-width:750px){
+
+    .game{
+        grid-template-columns:1fr;
+    }
+
+    .cover{
+        height:430px;
+    }
+
+    .info h1{
+        font-size:25px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+🎮 <span>GAME HUB</span>
+</div>
+
+<a href="index.html" class="back">
+← BACK
+</a>
+
+</header>
+
+
+<div class="container">
+
+<div class="game">
+
+
+<!-- COVER -->
+
+<div class="cover-box">
+
+<img
+id="gameCover"
+class="cover"
+src=""
+alt="Game Cover">
+
+</div>
+
+
+<!-- INFO -->
+
+<div class="info">
+
+<span class="android">
+ANDROID
+</span>
+
+<h1 id="gameTitle">
+GAME
+</h1>
+
+<p
+id="description"
+class="description">
+Mobile edition available for Android.
+</p>
+
+
+<div class="details">
+
+
+<div class="detail">
+
+<small>
+PLATFORM
+</small>
+
+<strong>
+ANDROID
+</strong>
+
+</div>
+
+
+<div class="detail">
+
+<small>
+VERSION
+</small>
+
+<strong>
+MOBILE
+</strong>
+
+</div>
+
+
+<div class="detail">
+
+<small>
+SIZE
+</small>
+
+<strong id="gameSize">
+-
+</strong>
+
+</div>
+
+
+<div class="detail">
+
+<small>
+TYPE
+</small>
+
+<strong>
+ACTION
+</strong>
+
+</div>
+
+
+</div>
+
+
+<div
+id="gamePrice"
+class="price">
+-
+</div>
+
+
+<button
+class="buy"
+onclick="buyGame()">
+
+🛒 BUY NOW
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<footer>
+
+GAME HUB © 2026
+
+</footer>
+
+
+<script>
+
+/*
+   GAME DATABASE
+*/
+
+const games = {
+
+    "gta5": {
+
+        title:
+        "GRAND THEFT AUTO V",
+
+        size:
+        "2000 MB",
+
+        price:
+        "$4.99",
+
+        image:
+        "https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=800&q=80",
+
+        description:
+        "Experience an action-packed open-world mobile game experience on Android."
+
+    },
+
+
+    "rdr1": {
+
+        title:
+        "RED DEAD REDEMPTION",
+
+        size:
+        "7000 MB",
+
+        price:
+        "$5.99",
+
+        image:
+        "https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=800&q=80",
+
+        description:
+        "A western action adventure experience prepared for Android mobile."
+
+    },
+
+
+    "sanandreas": {
+
+        title:
+        "GRAND THEFT AUTO: SAN ANDREAS",
+
+        size:
+        "2400 MB",
+
+        price:
+        "$3.99",
+
+        image:
+        "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=800&q=80",
+
+        description:
+        "Explore a large open world and enjoy an action adventure experience on Android."
+
+    },
+
+
+    "vicecity": {
+
+        title:
+        "GRAND THEFT AUTO: VICE CITY",
+
+        size:
+        "1500 MB",
+
+        price:
+        "$2.99",
+
+        image:
+        "https://images.unsplash.com/photo-1511882150382-421056c89033?auto=format&fit=crop&w=800&q=80",
+
+        description:
+        "Return to a classic city-based action adventure experience on Android."
+
+    },
+
+
+    "gta3": {
+
+        title:
+        "GRAND THEFT AUTO III",
+
+        size:
+        "800 MB",
+
+        price:
+        "$2.49",
+
+        image:
+        "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=800&q=80",
+
+        description:
+        "Classic open-world action gameplay prepared for Android mobile."
+
+    }
+
+};
+
+
+/*
+   GET GAME
+*/
+
+const params =
+new URLSearchParams(
+    location.search
+);
+
+const gameID =
+params.get("game") || "gta5";
+
+
+const game =
+games[gameID] || games.gta5;
+
+
+/*
+   DISPLAY
+*/
+
+document.getElementById(
+    "gameTitle"
+).textContent =
+game.title;
+
+
+document.getElementById(
+    "gameSize"
+).textContent =
+game.size;
+
+
+document.getElementById(
+    "gamePrice"
+).textContent =
+game.price;
+
+
+document.getElementById(
+    "description"
+).textContent =
+game.description;
+
+
+document.getElementById(
+    "gameCover"
+).src =
+game.image;
+
+
+/*
+   BUY
+*/
+
+function buyGame(){
+
+    alert(
+        "BUY PAGE\n\n" +
+        game.title +
+        "\n" +
+        game.price
+    );
+
+}
+
+</script>
+
+</body>
+  </html>
