@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-<title>Game Hub</title>
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>GAME HUB | Android Games</title>
+
 
 <style>
 
@@ -12,89 +17,213 @@
     box-sizing:border-box;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
 body{
+
     margin:0;
+
     background:#000;
-    color:white;
-    font-family:Arial,sans-serif;
+
+    color:#fff;
+
+    font-family:
+    Arial,
+    sans-serif;
+
 }
 
-/* HEADER */
 
-header{
-    height:70px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:0 20px;
-    background:#080808;
-    border-bottom:1px solid #222;
-    position:sticky;
-    top:0;
-    z-index:100;
-}
-
-.logo{
-    font-size:20px;
-    font-weight:bold;
-}
-
-.logo span{
-    background:linear-gradient(
-        90deg,
-        red,
-        #ff00ff,
-        blue,
-        cyan,
-        lime,
-        yellow,
-        red
-    );
-
-    background-size:400%;
-
-    -webkit-background-clip:text;
-    background-clip:text;
-
-    color:transparent;
-
-    animation:rgb 4s linear infinite;
-}
+/* =========================
+   RGB ANIMATION
+========================= */
 
 @keyframes rgb{
 
     0%{
-        background-position:0%;
+        background-position:0% 50%;
     }
 
     50%{
-        background-position:100%;
+        background-position:100% 50%;
     }
 
     100%{
-        background-position:0%;
+        background-position:0% 50%;
     }
 
 }
 
-/* HERO */
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+
+    height:70px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:
+    0 22px;
+
+    background:#080808;
+
+    border-bottom:
+    1px solid #222;
+
+    position:sticky;
+
+    top:0;
+
+    z-index:100;
+
+}
+
+
+.logo{
+
+    font-size:21px;
+
+    font-weight:bold;
+
+}
+
+
+.logo span{
+
+    background:
+
+    linear-gradient(
+
+        90deg,
+
+        red,
+
+        #ff00ff,
+
+        blue,
+
+        cyan,
+
+        lime,
+
+        yellow,
+
+        red
+
+    );
+
+    background-size:400%;
+
+    animation:
+    rgb 4s linear infinite;
+
+    -webkit-background-clip:text;
+
+    background-clip:text;
+
+    color:transparent;
+
+}
+
+
+.android-header{
+
+    color:#7cff7c;
+
+    font-size:11px;
+
+    font-weight:bold;
+
+}
+
+
+/* =========================
+   HERO
+========================= */
 
 .hero{
-    padding:50px 20px 30px;
+
     text-align:center;
+
+    padding:
+
+    65px 20px 35px;
+
 }
+
 
 .hero h1{
-    font-size:35px;
+
     margin:0;
+
+    font-size:42px;
+
+    font-weight:900;
+
 }
+
+
+.hero h1 span{
+
+    background:
+
+    linear-gradient(
+
+        90deg,
+
+        red,
+
+        #ff00ff,
+
+        blue,
+
+        cyan,
+
+        lime,
+
+        yellow,
+
+        red
+
+    );
+
+    background-size:400%;
+
+    animation:
+    rgb 4s linear infinite;
+
+    -webkit-background-clip:text;
+
+    background-clip:text;
+
+    color:transparent;
+
+}
+
 
 .hero p{
-    color:#777;
-    font-size:13px;
+
+    color:#666;
+
+    font-size:12px;
+
+    margin-top:12px;
+
 }
 
-/* GAMES */
+
+/* =========================
+   GAMES
+========================= */
 
 .games{
 
@@ -103,21 +232,25 @@ header{
     margin:auto;
 
     padding:
-    20px;
+    25px 20px 60px;
 
     display:grid;
 
     grid-template-columns:
+
     repeat(
         auto-fit,
         minmax(220px,1fr)
     );
 
-    gap:30px;
+    gap:28px;
 
 }
 
-/* CASE */
+
+/* =========================
+   GAME CASE
+========================= */
 
 .case{
 
@@ -125,35 +258,48 @@ header{
 
     height:350px;
 
-    border-radius:14px;
+    background:#0b0b0b;
 
-    background:#111;
+    border:
 
-    border:1px solid #292929;
+    1px solid #292929;
+
+    border-radius:15px;
 
     overflow:hidden;
 
     cursor:pointer;
 
     transition:
-    transform .3s,
-    box-shadow .3s;
+
+    .3s ease;
+
+    box-shadow:
+
+    0 8px 30px
+    rgba(0,0,0,.5);
 
 }
+
 
 .case:hover{
 
     transform:
+
     translateY(-10px)
-    rotateX(3deg);
+    scale(1.015);
 
     box-shadow:
-    0 15px 45px
-    rgba(0,255,255,.18);
+
+    0 15px 50px
+    rgba(0,255,255,.15);
 
 }
 
-/* COVER */
+
+/* =========================
+   COVER
+========================= */
 
 .cover{
 
@@ -163,11 +309,25 @@ header{
 
     object-fit:cover;
 
-    opacity:.78;
+    display:block;
+
+    transition:
+    .4s ease;
 
 }
 
-/* DARK OVERLAY */
+
+.case:hover .cover{
+
+    transform:
+    scale(1.07);
+
+}
+
+
+/* =========================
+   OVERLAY
+========================= */
 
 .overlay{
 
@@ -176,15 +336,25 @@ header{
     inset:0;
 
     background:
+
     linear-gradient(
-        transparent 25%,
-        rgba(0,0,0,.2) 45%,
+
+        to bottom,
+
+        rgba(0,0,0,.05) 20%,
+
+        rgba(0,0,0,.25) 45%,
+
         rgba(0,0,0,.95) 100%
+
     );
 
 }
 
-/* ANDROID */
+
+/* =========================
+   ANDROID BADGE
+========================= */
 
 .android{
 
@@ -195,17 +365,20 @@ header{
     left:12px;
 
     padding:
+
     7px 10px;
+
+    border:
+
+    1px solid #315c31;
 
     border-radius:7px;
 
-    background:#111;
-
-    border:1px solid #333;
+    background:#081108;
 
     color:#7cff7c;
 
-    font-size:11px;
+    font-size:10px;
 
     font-weight:bold;
 
@@ -213,44 +386,55 @@ header{
 
 }
 
-/* TITLE */
+
+/* =========================
+   GAME TITLE
+========================= */
 
 .title{
 
     position:absolute;
 
-    bottom:55px;
+    left:16px;
 
-    left:15px;
+    right:16px;
 
-    right:15px;
+    bottom:52px;
 
-    font-size:20px;
+    font-size:19px;
 
-    font-weight:bold;
+    font-weight:900;
+
+    line-height:1.2;
 
     text-shadow:
     0 2px 8px #000;
 
 }
 
-/* MOBILE */
+
+/* =========================
+   MOBILE
+========================= */
 
 .mobile{
 
     position:absolute;
 
-    bottom:15px;
+    left:16px;
 
-    left:15px;
+    bottom:17px;
 
     color:#aaa;
 
-    font-size:10px;
+    font-size:9px;
 
 }
 
-/* RGB SIDE */
+
+/* =========================
+   RGB EDGE
+========================= */
 
 .case::after{
 
@@ -258,33 +442,46 @@ header{
 
     position:absolute;
 
-    right:0;
-
     top:0;
 
-    width:3px;
+    right:0;
+
+    width:4px;
 
     height:100%;
 
     background:
+
     linear-gradient(
+
         180deg,
+
         red,
+
         #ff00ff,
+
         blue,
+
         cyan,
+
         lime,
+
         yellow,
+
         red
+
     );
 
     background-size:
+
     100% 400%;
 
     animation:
+
     rgbVertical 3s linear infinite;
 
 }
+
 
 @keyframes rgbVertical{
 
@@ -302,17 +499,82 @@ header{
 
 }
 
-/* FOOTER */
+
+/* =========================
+   FOOTER
+========================= */
 
 footer{
 
     text-align:center;
 
-    padding:40px;
+    padding:40px 20px;
+
+    border-top:
+    1px solid #171717;
 
     color:#444;
 
-    font-size:10px;
+    font-size:9px;
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:600px){
+
+    .hero h1{
+
+        font-size:32px;
+
+    }
+
+    .games{
+
+        grid-template-columns:
+        repeat(2,1fr);
+
+        gap:15px;
+
+        padding:
+        15px;
+
+    }
+
+    .case{
+
+        height:285px;
+
+    }
+
+    .title{
+
+        font-size:14px;
+
+    }
+
+    .android{
+
+        font-size:8px;
+
+        padding:
+        6px 7px;
+
+    }
+
+}
+
+
+@media(max-width:400px){
+
+    .games{
+
+        grid-template-columns:1fr;
+
+    }
 
 }
 
@@ -320,176 +582,249 @@ footer{
 
 </head>
 
+
 <body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
 
 <header>
 
 <div class="logo">
+
 🎮 <span>GAME HUB</span>
+
 </div>
 
-<div>
-ANDROID 🎮
+
+<div class="android-header">
+
+ANDROID
+
 </div>
 
 </header>
 
 
+
+<!-- =========================
+     HERO
+========================= -->
+
 <section class="hero">
 
 <h1>
-GAME HUB
+
+<span>GAME HUB</span>
+
 </h1>
 
 <p>
-Mobile Games Collection
+
+ANDROID MOBILE GAME COLLECTION
+
 </p>
 
 </section>
 
 
+
+<!-- =========================
+     GAMES
+========================= -->
+
 <main class="games">
+
 
 
 <!-- GTA V -->
 
 <div
 class="case"
-onclick="openGame('Grand Theft Auto V')">
+onclick="openGame('gta5')">
 
 <img
 class="cover"
-src="https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=800&q=80">
+src="images/gta5.jpg"
+alt="Grand Theft Auto V">
 
 <div class="overlay"></div>
 
 <div class="android">
+
 ANDROID
+
 </div>
 
 <div class="title">
+
 GRAND THEFT AUTO V
+
 </div>
 
 <div class="mobile">
+
 📱 MOBILE EDITION
-</div>
 
 </div>
 
+</div>
 
-<!-- RED DEAD -->
+
+
+<!-- RED DEAD REDEMPTION -->
 
 <div
 class="case"
-onclick="openGame('Red Dead Redemption')">
+onclick="openGame('rdr1')">
 
 <img
 class="cover"
-src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=800&q=80">
+src="images/rdr1.jpg"
+alt="Red Dead Redemption">
 
 <div class="overlay"></div>
 
 <div class="android">
+
 ANDROID
+
 </div>
 
 <div class="title">
+
 RED DEAD REDEMPTION
+
 </div>
 
 <div class="mobile">
+
 📱 MOBILE EDITION
+
 </div>
 
 </div>
+
 
 
 <!-- SAN ANDREAS -->
 
 <div
 class="case"
-onclick="openGame('Grand Theft Auto San Andreas')">
+onclick="openGame('sanandreas')">
 
 <img
 class="cover"
-src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=800&q=80">
+src="images/sanandreas.jpg"
+alt="Grand Theft Auto San Andreas">
 
 <div class="overlay"></div>
 
 <div class="android">
+
 ANDROID
+
 </div>
 
 <div class="title">
+
 GRAND THEFT AUTO:
+
 SAN ANDREAS
+
 </div>
 
 <div class="mobile">
+
 📱 MOBILE EDITION
+
 </div>
 
 </div>
+
 
 
 <!-- VICE CITY -->
 
 <div
 class="case"
-onclick="openGame('Grand Theft Auto Vice City')">
+onclick="openGame('vicecity')">
 
 <img
 class="cover"
-src="https://images.unsplash.com/photo-1511882150382-421056c89033?auto=format&fit=crop&w=800&q=80">
+src="images/vicecity.jpg"
+alt="Grand Theft Auto Vice City">
 
 <div class="overlay"></div>
 
 <div class="android">
+
 ANDROID
+
 </div>
 
 <div class="title">
+
 GRAND THEFT AUTO:
+
 VICE CITY
+
 </div>
 
 <div class="mobile">
+
 📱 MOBILE EDITION
+
 </div>
 
 </div>
+
 
 
 <!-- GTA III -->
 
 <div
 class="case"
-onclick="openGame('Grand Theft Auto III')">
+onclick="openGame('gta3')">
 
 <img
 class="cover"
-src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=800&q=80">
+src="images/gta3.jpg"
+alt="Grand Theft Auto III">
 
 <div class="overlay"></div>
 
 <div class="android">
+
 ANDROID
+
 </div>
 
 <div class="title">
+
 GRAND THEFT AUTO III
+
 </div>
 
 <div class="mobile">
+
 📱 MOBILE EDITION
+
 </div>
 
 </div>
+
 
 
 </main>
 
+
+
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
@@ -498,18 +833,23 @@ GAME HUB © 2026
 </footer>
 
 
+
 <script>
+
+/* =========================
+   OPEN GAME PAGE
+========================= */
 
 function openGame(game){
 
-    alert(
-        game +
-        "\n\nAndroid Mobile Edition"
-    );
+    window.location.href =
+    "game.html?game=" +
+    encodeURIComponent(game);
 
 }
 
 </script>
+
 
 </body>
 </html>
