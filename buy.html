@@ -2,14 +2,11 @@
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Game Hub | Checkout</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Game Hub | خرید بازی</title>
 
 <style>
-*{
-    box-sizing:border-box;
-}
+*{box-sizing:border-box}
 
 body{
     margin:0;
@@ -35,21 +32,15 @@ header{
 }
 
 .logo{
-    font-family:Arial;
     font-size:21px;
     font-weight:bold;
+    font-family:Arial;
 }
 
 .logo span{
     background:linear-gradient(
         90deg,
-        red,
-        #ff00ff,
-        blue,
-        cyan,
-        lime,
-        yellow,
-        red
+        red,#ff00ff,blue,cyan,lime,yellow,red
     );
     background-size:400%;
     animation:rgb 4s linear infinite;
@@ -77,8 +68,8 @@ header{
 
 .title h1{
     margin:0;
-    font-family:Arial;
     font-size:30px;
+    font-family:Arial;
 }
 
 .title p{
@@ -95,7 +86,7 @@ header{
     overflow:hidden;
 }
 
-.card::before{
+.card:before{
     content:"";
     position:absolute;
     top:0;
@@ -104,13 +95,7 @@ header{
     height:3px;
     background:linear-gradient(
         90deg,
-        red,
-        #ff00ff,
-        blue,
-        cyan,
-        lime,
-        yellow,
-        red
+        red,#ff00ff,blue,cyan,lime,yellow,red
     );
     background-size:400%;
     animation:rgb 3s linear infinite;
@@ -152,7 +137,6 @@ header{
 .price{
     font-size:18px;
     font-weight:bold;
-    color:#fff;
 }
 
 .form{
@@ -191,12 +175,7 @@ input:focus{
     font-weight:bold;
     background:linear-gradient(
         90deg,
-        red,
-        #ff00ff,
-        blue,
-        cyan,
-        lime,
-        yellow
+        red,#ff00ff,blue,cyan,lime,yellow
     );
     background-size:300%;
     animation:rgb 4s linear infinite;
@@ -247,7 +226,6 @@ input:focus{
 }
 
 @media(max-width:500px){
-
     .game img{
         width:85px;
         height:115px;
@@ -256,7 +234,6 @@ input:focus{
     .game-info h2{
         font-size:14px;
     }
-
 }
 </style>
 </head>
@@ -275,41 +252,28 @@ input:focus{
 
 </header>
 
-
 <div class="container">
 
 <div class="title">
-
 <h1>ثبت سفارش</h1>
-
 <p>GAME HUB • ANDROID STORE</p>
-
 </div>
-
 
 <div class="card">
 
-
 <div class="game">
 
-<img
-id="gameImage"
-src=""
-alt="Game">
+<img id="gameImage" src="" alt="Game">
 
 <div class="game-info">
 
-<span class="android">
-ANDROID
-</span>
+<span class="android">ANDROID</span>
 
 <h2 id="gameName">
 در حال بارگذاری...
 </h2>
 
-<div
-class="price"
-id="gamePrice">
+<div class="price" id="gamePrice">
 -
 </div>
 
@@ -317,9 +281,7 @@ id="gamePrice">
 
 </div>
 
-
 <div class="form">
-
 
 <label for="customerName">
 نام و نام خانوادگی
@@ -330,7 +292,6 @@ id="customerName"
 type="text"
 maxlength="60"
 placeholder="نام خود را وارد کنید">
-
 
 <label for="phone">
 شماره موبایل
@@ -343,7 +304,6 @@ inputmode="numeric"
 maxlength="11"
 placeholder="09123456789">
 
-
 <button
 id="submitBtn"
 class="submit"
@@ -353,17 +313,13 @@ onclick="submitOrder()">
 
 </button>
 
-
 <div
 id="successMessage"
 class="message success">
 
 ✅ سفارش با موفقیت ثبت شد.
 
-<div
-id="orderCode"
-class="order-code">
-</div>
+<div id="orderCode" class="order-code"></div>
 
 بازی:
 <strong id="successGame"></strong>
@@ -379,7 +335,6 @@ class="order-code">
 
 </div>
 
-
 <div
 id="errorMessage"
 class="message error">
@@ -388,41 +343,30 @@ class="message error">
 
 </div>
 
-
 </div>
-
 
 <div class="notice">
-
 پرداخت واقعی هنوز فعال نشده است.
 <br>
-پس از اتصال درگاه مجاز، مرحله پرداخت را به همین سیستم اضافه می‌کنیم.
-
-</div>
-
-
+بعداً درگاه پرداخت را به همین سیستم اضافه می‌کنیم.
 </div>
 
 </div>
-
-
-<!-- Supabase -->
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-
 <script>
 
-/* =================================
+/* =========================
    SUPABASE
-================================= */
+========================= */
 
 const SUPABASE_URL =
 "https://lldjrltmwllogpsvfwyq.supabase.co";
 
 const SUPABASE_KEY =
 "sb_publishable_OSZVrAQ9pntRAAvuonFcMg_5X3RT0-o";
-
 
 const supabaseClient =
 window.supabase.createClient(
@@ -431,9 +375,9 @@ window.supabase.createClient(
 );
 
 
-/* =================================
-   GAME DATABASE
-================================= */
+/* =========================
+   GAMES
+========================= */
 
 const games = {
 
@@ -470,9 +414,9 @@ const games = {
 };
 
 
-/* =================================
-   READ GAME FROM URL
-================================= */
+/* =========================
+   GET GAME
+========================= */
 
 const params =
 new URLSearchParams(
@@ -482,38 +426,29 @@ new URLSearchParams(
 const gameID =
 params.get("game") || "gta5";
 
-
 const game =
 games[gameID] || games.gta5;
 
 
-/* =================================
+/* =========================
    SHOW GAME
-================================= */
+========================= */
 
-document.getElementById(
-    "gameName"
-).textContent =
-game.name;
+document.getElementById("gameName")
+.textContent = game.name;
 
-
-document.getElementById(
-    "gamePrice"
-).textContent =
+document.getElementById("gamePrice")
+.textContent =
 game.price.toLocaleString("fa-IR")
-+
-" تومان";
++ " تومان";
+
+document.getElementById("gameImage")
+.src = game.image;
 
 
-document.getElementById(
-    "gameImage"
-).src =
-game.image;
-
-
-/* =================================
+/* =========================
    ORDER CODE
-================================= */
+========================= */
 
 function generateOrderCode(){
 
@@ -524,35 +459,28 @@ function generateOrderCode(){
     );
 
     return "GH-" + number;
-
 }
 
 
-/* =================================
-   SHOW ERROR
-================================= */
+/* =========================
+   ERROR
+========================= */
 
 function showError(message){
 
-    const box =
-    document.getElementById(
-        "errorMessage"
-    );
-
     document.getElementById(
         "errorText"
-    ).textContent =
-    message;
+    ).textContent = message;
 
-    box.style.display =
-    "block";
-
+    document.getElementById(
+        "errorMessage"
+    ).style.display = "block";
 }
 
 
-/* =================================
-   SUBMIT ORDER
-================================= */
+/* =========================
+   SUBMIT
+========================= */
 
 async function submitOrder(){
 
@@ -561,32 +489,26 @@ async function submitOrder(){
         "customerName"
     ).value.trim();
 
-
     const phone =
     document.getElementById(
         "phone"
     ).value.trim();
-
 
     const button =
     document.getElementById(
         "submitBtn"
     );
 
-
     document.getElementById(
         "errorMessage"
-    ).style.display =
-    "none";
-
+    ).style.display = "none";
 
     document.getElementById(
         "successMessage"
-    ).style.display =
-    "none";
+    ).style.display = "none";
 
 
-    /* NAME */
+    /* CHECK NAME */
 
     if(!name){
 
@@ -595,11 +517,10 @@ async function submitOrder(){
         );
 
         return;
-
     }
 
 
-    /* PHONE */
+    /* CHECK PHONE */
 
     if(!/^09\d{9}$/.test(phone)){
 
@@ -608,7 +529,6 @@ async function submitOrder(){
         );
 
         return;
-
     }
 
 
@@ -624,34 +544,26 @@ async function submitOrder(){
 
     try{
 
-        const { data, error } =
+        const { error } =
         await supabaseClient
         .from("orders")
-        .insert([{
+        .insert({
 
-            order_code:
-            orderCode,
+            order_code: orderCode,
 
-            customer_name:
-            name,
+            customer_name: name,
 
-            phone:
-            phone,
+            phone: phone,
 
-            game_id:
-            gameID,
+            game_id: gameID,
 
-            game_name:
-            game.name,
+            game_name: game.name,
 
-            price:
-            game.price,
+            price: game.price,
 
-            status:
-            "در انتظار پرداخت"
+            status: "در انتظار پرداخت"
 
-        }])
-        .select();
+        });
 
 
         if(error){
@@ -659,7 +571,6 @@ async function submitOrder(){
             console.error(error);
 
             throw error;
-
         }
 
 
@@ -667,27 +578,19 @@ async function submitOrder(){
 
         document.getElementById(
             "orderCode"
-        ).textContent =
-        orderCode;
-
+        ).textContent = orderCode;
 
         document.getElementById(
             "successGame"
-        ).textContent =
-        game.name;
-
+        ).textContent = game.name;
 
         document.getElementById(
             "successPhone"
-        ).textContent =
-        phone;
-
+        ).textContent = phone;
 
         document.getElementById(
             "successMessage"
-        ).style.display =
-        "block";
-
+        ).style.display = "block";
 
         button.textContent =
         "✅ سفارش ثبت شد";
@@ -696,23 +599,18 @@ async function submitOrder(){
     }catch(error){
 
         console.error(
-            "Supabase error:",
+            "Supabase:",
             error
         );
-
 
         showError(
             "ثبت سفارش انجام نشد. اتصال دیتابیس یا Policy جدول orders را بررسی کنید."
         );
 
-
-        button.disabled =
-        false;
-
+        button.disabled = false;
 
         button.textContent =
         "🛒 ثبت سفارش";
-
     }
 
 }
