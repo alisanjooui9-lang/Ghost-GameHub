@@ -566,31 +566,51 @@ async function submitOrder(){
         });
 
 
+        /* =========================
+           NEW ERROR HANDLER
+        ========================= */
+
         if(error){
 
             console.error(error);
 
-            throw error;
+            showError(
+                "خطای Supabase: " +
+                (error.message || "خطای نامشخص")
+            );
+
+            button.disabled = false;
+
+            button.textContent =
+            "🛒 ثبت سفارش";
+
+            return;
         }
 
 
-        /* SUCCESS */
+        /* =========================
+           SUCCESS
+        ========================= */
 
         document.getElementById(
             "orderCode"
-        ).textContent = orderCode;
+        ).textContent =
+        orderCode;
 
         document.getElementById(
             "successGame"
-        ).textContent = game.name;
+        ).textContent =
+        game.name;
 
         document.getElementById(
             "successPhone"
-        ).textContent = phone;
+        ).textContent =
+        phone;
 
         document.getElementById(
             "successMessage"
-        ).style.display = "block";
+        ).style.display =
+        "block";
 
         button.textContent =
         "✅ سفارش ثبت شد";
@@ -604,7 +624,8 @@ async function submitOrder(){
         );
 
         showError(
-            "ثبت سفارش انجام نشد. اتصال دیتابیس یا Policy جدول orders را بررسی کنید."
+            "خطای غیرمنتظره: " +
+            (error.message || "خطای نامشخص")
         );
 
         button.disabled = false;
