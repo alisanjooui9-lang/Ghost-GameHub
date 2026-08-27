@@ -1,0 +1,1384 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width,initial-scale=1.0">
+
+<title>Game Hub | مدیریت سفارش‌ها</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    background:#000;
+    color:#fff;
+    font-family:Tahoma,Arial,sans-serif;
+}
+
+@keyframes rgb{
+
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
+
+}
+
+header{
+
+    height:70px;
+
+    background:#080808;
+
+    border-bottom:1px solid #222;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:0 20px;
+
+}
+
+.logo{
+
+    font-size:21px;
+
+    font-weight:bold;
+
+    font-family:Arial;
+
+}
+
+.logo span{
+
+    background:linear-gradient(
+        90deg,
+        red,
+        #ff00ff,
+        blue,
+        cyan,
+        lime,
+        yellow,
+        red
+    );
+
+    background-size:400%;
+
+    animation:rgb 4s linear infinite;
+
+    -webkit-background-clip:text;
+
+    background-clip:text;
+
+    color:transparent;
+
+}
+
+.header-buttons{
+
+    display:flex;
+
+    gap:8px;
+
+}
+
+.header-btn{
+
+    border:1px solid #292929;
+
+    background:#111;
+
+    color:#aaa;
+
+    padding:8px 12px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    font-size:9px;
+
+}
+
+.header-btn:hover{
+
+    color:#fff;
+
+    border-color:#555;
+
+}
+
+.container{
+
+    max-width:1100px;
+
+    margin:auto;
+
+    padding:30px 15px;
+
+}
+
+.title{
+
+    text-align:center;
+
+    margin-bottom:25px;
+
+}
+
+.title h1{
+
+    margin:0;
+
+    font-size:28px;
+
+    font-family:Arial;
+
+}
+
+.title p{
+
+    color:#666;
+
+    font-size:9px;
+
+}
+
+.login-box{
+
+    max-width:420px;
+
+    margin:40px auto;
+
+    background:#090909;
+
+    border:1px solid #292929;
+
+    border-radius:18px;
+
+    padding:25px;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.login-box:before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    right:0;
+
+    width:100%;
+
+    height:3px;
+
+    background:linear-gradient(
+        90deg,
+        red,
+        #ff00ff,
+        blue,
+        cyan,
+        lime,
+        yellow,
+        red
+    );
+
+    background-size:400%;
+
+    animation:rgb 3s linear infinite;
+
+}
+
+.login-box h2{
+
+    text-align:center;
+
+    font-size:18px;
+
+    margin:5px 0 25px;
+
+}
+
+label{
+
+    display:block;
+
+    color:#aaa;
+
+    font-size:10px;
+
+    margin-bottom:7px;
+
+}
+
+input{
+
+    width:100%;
+
+    padding:13px;
+
+    margin-bottom:16px;
+
+    background:#111;
+
+    color:#fff;
+
+    border:1px solid #292929;
+
+    border-radius:10px;
+
+    outline:none;
+
+}
+
+input:focus{
+
+    border-color:#00ffff;
+
+}
+
+.main-btn{
+
+    width:100%;
+
+    padding:14px;
+
+    border:0;
+
+    border-radius:10px;
+
+    color:#fff;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    background:linear-gradient(
+        90deg,
+        red,
+        #ff00ff,
+        blue,
+        cyan,
+        lime,
+        yellow
+    );
+
+    background-size:300%;
+
+    animation:rgb 4s linear infinite;
+
+}
+
+.message{
+
+    display:none;
+
+    margin-top:15px;
+
+    padding:13px;
+
+    border-radius:10px;
+
+    font-size:9px;
+
+    line-height:2;
+
+}
+
+.error{
+
+    display:none;
+
+    background:#180707;
+
+    border:1px solid #5b2222;
+
+    color:#ff8585;
+
+}
+
+.success{
+
+    background:#071207;
+
+    border:1px solid #285528;
+
+    color:#9cff9c;
+
+}
+
+.admin-panel{
+
+    display:none;
+
+}
+
+.toolbar{
+
+    display:flex;
+
+    gap:10px;
+
+    margin-bottom:20px;
+
+}
+
+.search{
+
+    flex:1;
+
+    margin:0;
+
+}
+
+.orders{
+
+    display:grid;
+
+    gap:12px;
+
+}
+
+.order{
+
+    background:#090909;
+
+    border:1px solid #292929;
+
+    border-radius:15px;
+
+    padding:18px;
+
+}
+
+.order-top{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin-bottom:15px;
+
+}
+
+.order-code{
+
+    color:#00ffff;
+
+    font-family:Arial;
+
+    font-size:17px;
+
+    font-weight:bold;
+
+    direction:ltr;
+
+}
+
+.status{
+
+    padding:6px 9px;
+
+    border-radius:7px;
+
+    background:#151515;
+
+    border:1px solid #333;
+
+    color:#aaa;
+
+    font-size:8px;
+
+}
+
+.order-info{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:10px;
+
+}
+
+.item{
+
+    background:#111;
+
+    border-radius:9px;
+
+    padding:10px;
+
+}
+
+.item small{
+
+    display:block;
+
+    color:#666;
+
+    font-size:7px;
+
+    margin-bottom:5px;
+
+}
+
+.item strong{
+
+    font-size:10px;
+
+    word-break:break-word;
+
+}
+
+.order-actions{
+
+    display:flex;
+
+    gap:8px;
+
+    margin-top:15px;
+
+}
+
+.action{
+
+    flex:1;
+
+    padding:10px;
+
+    border-radius:8px;
+
+    border:1px solid #292929;
+
+    background:#111;
+
+    color:#fff;
+
+    cursor:pointer;
+
+    font-size:8px;
+
+}
+
+.action:hover{
+
+    border-color:#00ffff;
+
+}
+
+.delete:hover{
+
+    border-color:#ff4444;
+
+    color:#ff7777;
+
+}
+
+.empty{
+
+    text-align:center;
+
+    color:#666;
+
+    padding:40px;
+
+    background:#090909;
+
+    border:1px solid #222;
+
+    border-radius:15px;
+
+}
+
+.loading{
+
+    text-align:center;
+
+    color:#888;
+
+    padding:30px;
+
+}
+
+.user-info{
+
+    text-align:center;
+
+    color:#555;
+
+    font-size:8px;
+
+    margin-bottom:15px;
+
+}
+
+@media(max-width:600px){
+
+    .order-info{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .order-top{
+
+        align-items:flex-start;
+
+        flex-direction:column;
+
+    }
+
+    .toolbar{
+
+        flex-direction:column;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+
+🎮 <span>GAME HUB</span>
+
+</div>
+
+<div class="header-buttons">
+
+<button
+class="header-btn"
+onclick="loadOrders()">
+
+🔄 بروزرسانی
+
+</button>
+
+<button
+class="header-btn"
+onclick="logout()">
+
+🚪 خروج
+
+</button>
+
+</div>
+
+</header>
+
+
+<div class="container">
+
+
+<!-- LOGIN -->
+
+<div
+id="loginBox"
+class="login-box">
+
+<h2>
+
+🔐 ورود مدیر
+
+</h2>
+
+<form onsubmit="login(event)">
+
+<label>
+
+ایمیل مدیر
+
+</label>
+
+<input
+id="email"
+type="email"
+required
+placeholder="admin@example.com">
+
+
+<label>
+
+رمز عبور
+
+</label>
+
+<input
+id="password"
+type="password"
+required
+placeholder="رمز عبور">
+
+
+<button
+id="loginButton"
+class="main-btn"
+type="submit">
+
+ورود به پنل
+
+</button>
+
+</form>
+
+<div
+id="loginError"
+class="message error">
+
+</div>
+
+</div>
+
+
+<!-- ADMIN PANEL -->
+
+<div
+id="adminPanel"
+class="admin-panel">
+
+<div class="title">
+
+<h1>
+
+مدیریت سفارش‌ها
+
+</h1>
+
+<p>
+
+GAME HUB • ADMIN PANEL
+
+</p>
+
+</div>
+
+<div
+id="userInfo"
+class="user-info">
+
+</div>
+
+
+<div class="toolbar">
+
+<input
+id="searchInput"
+class="search"
+type="search"
+placeholder="جستجو با کد سفارش، نام، موبایل یا بازی..."
+oninput="filterOrders()">
+
+</div>
+
+
+<div
+id="orders"
+class="orders">
+
+<div class="loading">
+
+در حال دریافت سفارش‌ها...
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+
+
+/* =========================
+   SUPABASE
+========================= */
+
+const SUPABASE_URL =
+"https://lldjrltmwllogpsvfwyq.supabase.co";
+
+const SUPABASE_KEY =
+"sb_publishable_OSZVrAQ9pntRAAvuonFcMg_5X3RT0-o";
+
+const supabaseClient =
+window.supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_KEY
+);
+
+
+/* =========================
+   DATA
+========================= */
+
+let allOrders = [];
+
+
+/* =========================
+   LOGIN
+========================= */
+
+async function login(event){
+
+    event.preventDefault();
+
+    const email =
+    document.getElementById(
+        "email"
+    ).value.trim();
+
+    const password =
+    document.getElementById(
+        "password"
+    ).value;
+
+    const button =
+    document.getElementById(
+        "loginButton"
+    );
+
+    const errorBox =
+    document.getElementById(
+        "loginError"
+    );
+
+    errorBox.style.display =
+    "none";
+
+    button.disabled =
+    true;
+
+    button.textContent =
+    "در حال ورود...";
+
+
+    const {
+        data,
+        error
+    } =
+    await supabaseClient.auth.signInWithPassword({
+
+        email:email,
+
+        password:password
+
+    });
+
+
+    if(error){
+
+        errorBox.textContent =
+        "خطای ورود: " +
+        (error.message ||
+        "اطلاعات ورود صحیح نیست.");
+
+        errorBox.style.display =
+        "block";
+
+        button.disabled =
+        false;
+
+        button.textContent =
+        "ورود به پنل";
+
+        return;
+
+    }
+
+
+    showAdminPanel(
+        data.user
+    );
+
+}
+
+
+/* =========================
+   SHOW PANEL
+========================= */
+
+function showAdminPanel(user){
+
+    document.getElementById(
+        "loginBox"
+    ).style.display =
+    "none";
+
+    document.getElementById(
+        "adminPanel"
+    ).style.display =
+    "block";
+
+    document.getElementById(
+        "userInfo"
+    ).textContent =
+    "وارد شده با: " +
+    user.email;
+
+    loadOrders();
+
+}
+
+
+/* =========================
+   CHECK SESSION
+========================= */
+
+async function checkSession(){
+
+    const {
+        data
+    } =
+    await supabaseClient.auth.getSession();
+
+    if(data.session){
+
+        showAdminPanel(
+            data.session.user
+        );
+
+    }
+
+}
+
+
+/* =========================
+   LOAD ORDERS
+========================= */
+
+async function loadOrders(){
+
+    const box =
+    document.getElementById(
+        "orders"
+    );
+
+    box.innerHTML =
+    '<div class="loading">در حال دریافت سفارش‌ها...</div>';
+
+
+    const {
+        data,
+        error
+    } =
+    await supabaseClient
+    .from("orders")
+    .select("*")
+    .order(
+        "created_at",
+        {
+            ascending:false
+        }
+    );
+
+
+    if(error){
+
+        box.innerHTML =
+        '<div class="message error" style="display:block">' +
+        "خطای دریافت سفارش‌ها: " +
+        escapeHTML(
+            error.message ||
+            "خطای نامشخص"
+        ) +
+        "</div>";
+
+        return;
+
+    }
+
+
+    allOrders =
+    data || [];
+
+    renderOrders(
+        allOrders
+    );
+
+}
+
+
+/* =========================
+   RENDER
+========================= */
+
+function renderOrders(orders){
+
+    const box =
+    document.getElementById(
+        "orders"
+    );
+
+
+    if(!orders.length){
+
+        box.innerHTML =
+        '<div class="empty">' +
+        "📦 سفارشی پیدا نشد." +
+        "</div>";
+
+        return;
+
+    }
+
+
+    box.innerHTML =
+    orders.map(
+        order => {
+
+            const date =
+            order.created_at
+            ?
+            new Date(
+                order.created_at
+            ).toLocaleString(
+                "fa-IR"
+            )
+            :
+            "-";
+
+
+            return `
+
+<div class="order">
+
+<div class="order-top">
+
+<div class="order-code">
+
+${escapeHTML(
+    order.order_code || "-"
+)}
+
+</div>
+
+<div class="status">
+
+${escapeHTML(
+    order.status || "-"
+)}
+
+</div>
+
+</div>
+
+
+<div class="order-info">
+
+
+<div class="item">
+
+<small>مشتری</small>
+
+<strong>
+
+${escapeHTML(
+    order.customer_name || "-"
+)}
+
+</strong>
+
+</div>
+
+
+<div class="item">
+
+<small>شماره موبایل</small>
+
+<strong dir="ltr">
+
+${escapeHTML(
+    order.phone || "-"
+)}
+
+</strong>
+
+</div>
+
+
+<div class="item">
+
+<small>بازی</small>
+
+<strong>
+
+${escapeHTML(
+    order.game_name || "-"
+)}
+
+</strong>
+
+</div>
+
+
+<div class="item">
+
+<small>قیمت</small>
+
+<strong>
+
+${formatPrice(
+    order.price
+)}
+
+</strong>
+
+</div>
+
+
+<div class="item">
+
+<small>تاریخ ثبت</small>
+
+<strong>
+
+${escapeHTML(
+    date
+)}
+
+</strong>
+
+</div>
+
+
+<div class="item">
+
+<small>شناسه بازی</small>
+
+<strong>
+
+${escapeHTML(
+    order.game_id || "-"
+)}
+
+</strong>
+
+</div>
+
+
+</div>
+
+
+<div class="order-actions">
+
+<button
+class="action"
+onclick="changeStatus(
+'${escapeJS(
+    order.id
+)}'
+)">
+
+🔄 تغییر وضعیت
+
+</button>
+
+
+<button
+class="action delete"
+onclick="deleteOrder(
+'${escapeJS(
+    order.id
+)}'
+)">
+
+🗑️ حذف
+
+</button>
+
+</div>
+
+</div>
+
+`;
+
+        }
+    ).join("");
+
+}
+
+
+/* =========================
+   CHANGE STATUS
+========================= */
+
+async function changeStatus(id){
+
+    const newStatus =
+    prompt(
+        "وضعیت جدید را وارد کنید:",
+        "در انتظار پرداخت"
+    );
+
+
+    if(newStatus === null){
+
+        return;
+
+    }
+
+
+    const status =
+    newStatus.trim();
+
+
+    if(!status){
+
+        alert(
+            "وضعیت نمی‌تواند خالی باشد."
+        );
+
+        return;
+
+    }
+
+
+    const {
+        error
+    } =
+    await supabaseClient
+    .from("orders")
+    .update({
+        status:status
+    })
+    .eq(
+        "id",
+        id
+    );
+
+
+    if(error){
+
+        alert(
+            "خطا: " +
+            error.message
+        );
+
+        return;
+
+    }
+
+
+    loadOrders();
+
+}
+
+
+/* =========================
+   DELETE
+========================= */
+
+async function deleteOrder(id){
+
+    const ok =
+    confirm(
+        "آیا مطمئن هستید که می‌خواهید این سفارش حذف شود؟"
+    );
+
+
+    if(!ok){
+
+        return;
+
+    }
+
+
+    const {
+        error
+    } =
+    await supabaseClient
+    .from("orders")
+    .delete()
+    .eq(
+        "id",
+        id
+    );
+
+
+    if(error){
+
+        alert(
+            "خطا در حذف سفارش: " +
+            error.message
+        );
+
+        return;
+
+    }
+
+
+    loadOrders();
+
+}
+
+
+/* =========================
+   SEARCH
+========================= */
+
+function filterOrders(){
+
+    const query =
+    document.getElementById(
+        "searchInput"
+    ).value
+    .trim()
+    .toLowerCase();
+
+
+    if(!query){
+
+        renderOrders(
+            allOrders
+        );
+
+        return;
+
+    }
+
+
+    const filtered =
+    allOrders.filter(
+        order => {
+
+            const text =
+            [
+
+                order.order_code,
+
+                order.customer_name,
+
+                order.phone,
+
+                order.game_name,
+
+                order.game_id,
+
+                order.status
+
+            ]
+            .filter(Boolean)
+            .join(" ")
+            .toLowerCase();
+
+
+            return text.includes(
+                query
+            );
+
+        }
+    );
+
+
+    renderOrders(
+        filtered
+    );
+
+}
+
+
+/* =========================
+   LOGOUT
+========================= */
+
+async function logout(){
+
+    await supabaseClient.auth.signOut();
+
+    location.reload();
+
+}
+
+
+/* =========================
+   HELPERS
+========================= */
+
+function formatPrice(price){
+
+    if(
+        price === null ||
+        price === undefined
+    ){
+
+        return "-";
+
+    }
+
+    return Number(price)
+    .toLocaleString("fa-IR")
+    + " تومان";
+
+}
+
+
+function escapeHTML(value){
+
+    return String(value)
+    .replaceAll("&","&amp;")
+    .replaceAll("<","&lt;")
+    .replaceAll(">","&gt;")
+    .replaceAll('"',"&quot;")
+    .replaceAll("'","&#039;");
+
+}
+
+
+function escapeJS(value){
+
+    return String(value)
+    .replaceAll("\\","\\\\")
+    .replaceAll("'","\\'");
+
+}
+
+
+/* =========================
+   START
+========================= */
+
+checkSession();
+
+</script>
+
+</body>
+  </html>
